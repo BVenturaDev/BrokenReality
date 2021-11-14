@@ -9,7 +9,7 @@ var max_speed = 30
 var friction = 3
 var gravity = -20
 var rot_angle = 45
-var jump_height = 30
+var jump_height = 20
 
 var cam_toggle = false
 
@@ -47,6 +47,7 @@ func _physics_process(delta):
 	var in_dir = Vector3()
 	in_dir.z = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	in_dir.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	in_dir = in_dir.normalized()
 	vel = vel.linear_interpolate(in_dir * max_speed, accel * delta)
 	vel.z = lerp(vel.z, 0, friction * delta)
 	vel.x = lerp(vel.x, 0, friction * delta)

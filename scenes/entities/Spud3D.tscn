@@ -48,10 +48,11 @@ shape = SubResource( 4 )
 [node name="CamRot" type="Spatial" parent="."]
 
 [node name="Camera" type="Camera" parent="CamRot"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 16, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 64, 0 )
 projection = 1
 current = true
-size = 16.0
+size = 32.0
+near = 0.01
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.45, 0 )
