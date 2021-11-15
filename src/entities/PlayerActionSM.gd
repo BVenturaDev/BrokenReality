@@ -24,6 +24,7 @@ func _input(event: InputEvent) -> void:
 			state = states.idle
 		if Input.is_action_just_pressed("jump"):
 			parent.velocity.y += parent.jump_height
+			state = states.jump
 
 func _state_logic(delta):
 	if ![states.attack, states.shoot,].has(state):
@@ -34,14 +35,10 @@ func _state_logic(delta):
 func _get_transition(delta):
 	match state:
 		states.idle:
-			if !parent.is_on_floor():
-				return states.jump
-			elif parent.velocity.x != 0 or parent.velocity.z != 0:
+			if parent.velocity.x != 0 or parent.velocity.z != 0:
 				return states.walk
 		states.walk:
-			if !parent.is_on_floor():
-				return states.jump
-			elif parent.velocity.x == 0 and parent.velocity.z == 0:
+			if parent.velocity.x == 0 and parent.velocity.z == 0:
 				return states.idle
 		states.jump:
 			if parent.is_on_floor():
@@ -50,8 +47,10 @@ func _get_transition(delta):
 
 func _enter_state(new_state, old_state):
 	match state:
-		states.attack:
-			pass
+		states.idle:
+			parent.velocity.y = 0
 
 func _exit_state(old_state, new_state):
-	pass
+	match state: 
+		states.jump:
+			pass
