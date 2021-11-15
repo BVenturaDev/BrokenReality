@@ -31,8 +31,6 @@ func _movement(delta) -> void:
 		velocity.z = lerp(velocity.z, 0, friction * delta)
 		velocity.x = lerp(velocity.x, 0, friction * delta)
 		
-	if not is_on_floor():
-		velocity.y += gravity * delta
 	if is_on_ceiling():
 		velocity.y = -0.1
 		

@@ -28,6 +28,8 @@ func _input(event: InputEvent) -> void:
 func _state_logic(delta):
 	if ![states.attack, states.shoot,].has(state):
 		parent._movement(delta)
+		if state == states.jump:
+			parent.velocity.y += parent.gravity * delta
 
 func _get_transition(delta):
 	match state:
