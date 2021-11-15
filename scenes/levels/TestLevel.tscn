@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/entities/Spud3D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Env.tres" type="Environment" id=2]
-[ext_resource path="res://scenes/props/hallway.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/prefabs/hallway/hallway.tscn" type="PackedScene" id=3]
 
 [node name="TestLevel" type="Spatial"]
 
@@ -13,9 +13,16 @@ environment = ExtResource( 2 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.811806, -0.174829, 0.557141, 0.55412, -0.531597, 0.64059, 0.184181, 0.828758, 0.52843, 15.0439, 24.6793, 15.341 )
+shadow_bias = -0.6
+shadow_reverse_cull_face = true
 
 [node name="hallway" parent="." instance=ExtResource( 3 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+
+[node name="hallway4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 0 )
 
 [node name="hallway2" parent="." instance=ExtResource( 3 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 0 )
+
+[node name="hallway3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, 0 )

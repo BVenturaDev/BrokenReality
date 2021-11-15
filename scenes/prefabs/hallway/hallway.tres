@@ -1,0 +1,9 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://assets/models/hallway/hallway.png" type="Texture" id=1]
+
+[resource]
+flags_transparent = true
+flags_ensure_correct_normals = true
+params_depth_draw_mode = 3
+albedo_texture = ExtResource( 1 )
