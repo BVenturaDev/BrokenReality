@@ -17,4 +17,7 @@ func _process(delta: float) -> void:
 		if objective.has_method("hitted"):
 			objective.hitted()
 			queue_free()
+		if objective.has_method("ringed"):
+			objective.ringed()
+			queue_free()
 
