@@ -1,6 +1,6 @@
 extends Spatial
 
-var speed := 80
+var speed := 300
 var duration := 1
 var timer : float
 var direction : Vector3

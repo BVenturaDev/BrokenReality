@@ -4,16 +4,24 @@ extends KinematicBody
 var velocity : Vector3 
 var direction : Vector2
 var acceleration = 10
-var max_speed = 50
+var max_speed = 100
 var friction = 10
 var gravity = -50
 var rotation_angle = 45
-var jump_height = 15
+var jump_height = 20
 var bullet : PackedScene = preload("res://scenes/entities/Bullet.tscn")
+var shoot_recoil = 0.35
+var aim_lenght = 8
+var max_sanity = 100
+var sanity : float = max_sanity setget set_sanity
+var sanity_drop_rate = 5
+var sanity_up_rate = 5
+
 
 onready var camera_rotator = $CameraRotator
 onready var sprite = $Sprite3D
 onready var hitbox = $HitBox
+onready var aim = $Aim
 onready var light := get_parent().find_node("DirectionalLight") 
 onready var vp : Viewport = get_viewport()
 onready var vp_size : Vector2 = get_viewport().size
@@ -52,14 +60,42 @@ func _shoot() -> void:
 	if (vp.get_mouse_position().y < vp_slope * vp.get_mouse_position().x 
 		and vp.get_mouse_position().y > -vp_slope * vp.get_mouse_position().x + vp.size.y ):
 			new_bullet.direction = Vector3(1,0,0)
+			self.translate(Vector3(-shoot_recoil,0,0))
 	if (vp.get_mouse_position().y > vp_slope * vp.get_mouse_position().x 
 		and vp.get_mouse_position().y < -vp_slope * vp.get_mouse_position().x + vp.size.y ):
 			new_bullet.direction = Vector3(-1,0,0)
+			self.translate(Vector3(shoot_recoil,0,0))
 	if (vp.get_mouse_position().y < vp_slope * vp.get_mouse_position().x 
 		and vp.get_mouse_position().y < -vp_slope * vp.get_mouse_position().x + vp.size.y ):
 			new_bullet.direction = Vector3(0,0,-1)
+			self.translate(Vector3(0,0,shoot_recoil))
 	if (vp.get_mouse_position().y > vp_slope * vp.get_mouse_position().x 
 		and vp.get_mouse_position().y > -vp_slope * vp.get_mouse_position().x + vp.size.y ):
 			new_bullet.direction = Vector3(0,0,1)
+			self.translate(Vector3(0,0,-shoot_recoil))
 	get_tree().current_scene.add_child(new_bullet)
 
+func _aim() -> void:
+	if (vp.get_mouse_position().y < vp_slope * vp.get_mouse_position().x 
+		and vp.get_mouse_position().y > -vp_slope * vp.get_mouse_position().x + vp.size.y ):
+			aim.translation = Vector3(aim_lenght,1.4,0) 
+	if (vp.get_mouse_position().y > vp_slope * vp.get_mouse_position().x 
+		and vp.get_mouse_position().y < -vp_slope * vp.get_mouse_position().x + vp.size.y ):
+			aim.translation = Vector3(-aim_lenght,1.4,0)
+	if (vp.get_mouse_position().y < vp_slope * vp.get_mouse_position().x 
+		and vp.get_mouse_position().y < -vp_slope * vp.get_mouse_position().x + vp.size.y ):
+			aim.translation = Vector3(0,1.4,-aim_lenght) 
+	if (vp.get_mouse_position().y > vp_slope * vp.get_mouse_position().x 
+		and vp.get_mouse_position().y > -vp_slope * vp.get_mouse_position().x + vp.size.y ):
+			aim.translation = Vector3(0,1.4,aim_lenght) 
+
+func _going_insane(delta) -> void:
+	sanity += -sanity_drop_rate * delta
+
+func _going_sane(delta) -> void:
+	sanity += sanity_up_rate * delta
+
+func set_sanity(value) -> void:
+	sanity = value
+	value = clamp(value, 0, max_sanity)
+	self.sprite.modulate.a = sanity/max_sanity

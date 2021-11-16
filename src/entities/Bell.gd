@@ -3,4 +3,5 @@ extends KinematicBody
 onready var door := $OpenableDoor
 
 func ringed() -> void:
-	door.queue_free()
+	if self.has_node("OpenableDoor"):
+		door.queue_free()

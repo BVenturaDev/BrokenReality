@@ -15,12 +15,13 @@ func _input(event: InputEvent) -> void:
 		if Input.is_action_just_pressed("left_click"):
 			parent._attack()
 			state = states.attack
-			yield(get_tree().create_timer(1.0), "timeout")
+			yield(get_tree().create_timer(0.5), "timeout")
 			state = states.idle
-		if Input.is_action_just_pressed("right_click"):
+		if Input.is_action_just_released("right_click"):
+			parent.aim.visible = false
 			parent._shoot()
 			state = states.shoot
-			yield(get_tree().create_timer(1.0), "timeout")
+			yield(get_tree().create_timer(0.5), "timeout")
 			state = states.idle
 		if Input.is_action_just_pressed("jump"):
 			parent.velocity.y = 0
@@ -28,6 +29,11 @@ func _input(event: InputEvent) -> void:
 			state = states.jump
 
 func _state_logic(delta):
+	if [states.idle, states.walk, states.run].has(state):
+		if Input.is_action_pressed("right_click"):
+			parent.aim.visible = true
+			parent._aim()
+		
 	if ![states.attack, states.shoot,].has(state):
 		parent._movement(delta)
 		if state == states.jump:
@@ -51,11 +57,12 @@ func _get_transition(delta):
 	return null
 
 func _enter_state(new_state, old_state):
-	match state:
-		states.idle:
+	match new_state:
+		states.shoot:
 			pass
 
 func _exit_state(old_state, new_state):
-	match state: 
-		states.jump:
+	match old_state: 
+		states.shoot:
 			pass
+		
