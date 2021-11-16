@@ -16,5 +16,5 @@ shape = SubResource( 1 )
 transform = Transform( 3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 0, 1, 0 )
 texture = ExtResource( 1 )
 
-[node name="CameraRotatorSM" type="Node" parent="."]
+[node name="WorldModeSM" type="Node" parent="."]
 script = ExtResource( 3 )

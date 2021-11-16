@@ -16,5 +16,4 @@ dest_files=[ "res://.import/hallway_crossing.obj-24fad44959e80319432b4391b8e8c2b
 generate_tangents=false
 scale_mesh=Vector3( 1, 1, 1 )
 offset_mesh=Vector3( 0, 0, 0 )
-octahedral_compression=true
-optimize_mesh_flags=190
+optimize_mesh=true

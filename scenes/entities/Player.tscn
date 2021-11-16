@@ -64,7 +64,7 @@ near = 0.01
 [node name="PlayerActionSM" type="Node" parent="."]
 script = ExtResource( 3 )
 
-[node name="CameraRotatorSM" type="Node" parent="."]
+[node name="WorldModeSM" type="Node" parent="."]
 script = ExtResource( 4 )
 
 [node name="HitBox" type="Area" parent="."]

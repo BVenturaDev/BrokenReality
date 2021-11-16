@@ -10,7 +10,7 @@ var gravity = -50
 var rotation_angle = 45
 var jump_height = 20
 var bullet : PackedScene = preload("res://scenes/entities/Bullet.tscn")
-var shoot_recoil = 0.35
+var shoot_recoil = 0.0
 var aim_lenght = 8
 var max_sanity = 100
 var sanity : float = max_sanity 
@@ -28,7 +28,13 @@ onready var light := get_parent().find_node("DirectionalLight")
 onready var vp : Viewport = get_viewport()
 onready var vp_size : Vector2 = get_viewport().size
 onready var vp_slope : float = vp_size.y/vp_size.x 
+onready var mirror = get_parent().get_node("Mirror")
+onready var sm = $WorldModeSM
 
+func _ready() -> void:
+	add_to_group("player")
+	mirror.connect("entered", self, "_on_mirror_entered")
+	
 
 func _movement(delta) -> void:
 	direction.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
@@ -103,6 +109,13 @@ func _enemy_sanity_drain(delta) -> void:
 		if distance < enemy_sanity_distance_trigger:
 			distance = clamp(distance, 1, enemy_sanity_distance_trigger)
 			sanity += - enemy_sanity_drop_rate * delta * 1/distance
-		
+
+func _on_mirror_entered() -> void:
+	match sm.state:
+		sm.states.normal:
+			sm.state = sm.states.inverted
+		sm.states.inverted:
+			sm.state = sm.states.normal
+	
 
 
