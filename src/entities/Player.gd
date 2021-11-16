@@ -13,9 +13,11 @@ var bullet : PackedScene = preload("res://scenes/entities/Bullet.tscn")
 var shoot_recoil = 0.35
 var aim_lenght = 8
 var max_sanity = 100
-var sanity : float = max_sanity setget set_sanity
+var sanity : float = max_sanity 
 var sanity_drop_rate = 5
 var sanity_up_rate = 5
+var enemy_sanity_drop_rate = 80
+var enemy_sanity_distance_trigger = 8
 
 
 onready var camera_rotator = $CameraRotator
@@ -95,7 +97,12 @@ func _going_insane(delta) -> void:
 func _going_sane(delta) -> void:
 	sanity += sanity_up_rate * delta
 
-func set_sanity(value) -> void:
-	sanity = value
-	value = clamp(value, 0, max_sanity)
-	self.sprite.modulate.a = sanity/max_sanity
+func _enemy_sanity_drain(delta) -> void:
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		var distance = (self.global_transform.origin - enemy.global_transform.origin).length()
+		if distance < enemy_sanity_distance_trigger:
+			distance = clamp(distance, 1, enemy_sanity_distance_trigger)
+			sanity += - enemy_sanity_drop_rate * delta * 1/distance
+		
+
+

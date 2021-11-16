@@ -8,6 +8,9 @@ var rotation_angle = 45
 onready var pathfollow = get_parent()
 onready var sprite = $Sprite3D
 
+func _ready() -> void:
+	add_to_group("enemies")
+
 func _process(delta: float) -> void:
 	_patrol(delta)
 

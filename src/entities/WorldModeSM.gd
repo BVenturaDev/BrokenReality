@@ -15,6 +15,7 @@ func _state_logic(delta):
 	if parent.has_method("_movement"):
 		parent.sanity = clamp(parent.sanity, 0, parent.max_sanity)
 		parent.sprite.modulate.a = parent.sanity/parent.max_sanity
+		parent._enemy_sanity_drain(delta)
 		if state == states.normal:
 			parent._going_sane(delta)
 		if state == states.inverted:
