@@ -17,9 +17,10 @@ func _input(event: InputEvent) -> void:
 			state = states.attack
 			yield(get_tree().create_timer(0.5), "timeout")
 			state = states.idle
-		if Input.is_action_just_released("right_click"):
+		if Input.is_action_just_released("right_click") and parent.timer.is_stopped():
 			parent.aim.visible = false
 			parent._shoot()
+			parent.timer.start()
 			state = states.shoot
 			yield(get_tree().create_timer(0.5), "timeout")
 			state = states.idle
@@ -30,10 +31,10 @@ func _input(event: InputEvent) -> void:
 
 func _state_logic(delta):
 	if [states.idle, states.walk, states.run].has(state):
-		if Input.is_action_pressed("right_click"):
-			parent.aim.visible = true
-			parent._aim()
-		
+			if Input.is_action_pressed("right_click") and parent.timer.is_stopped() :
+				parent.aim.visible = true
+				parent._aim()
+	
 	if ![states.attack, states.shoot,].has(state):
 		parent._movement(delta)
 		if state == states.jump:

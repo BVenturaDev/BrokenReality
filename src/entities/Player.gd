@@ -30,10 +30,12 @@ onready var vp_size : Vector2 = get_viewport().size
 onready var vp_slope : float = vp_size.y/vp_size.x 
 onready var mirror = get_parent().get_node("Mirror")
 onready var sm = $WorldModeSM
+onready var timer =$Timer
 
 func _ready() -> void:
 	add_to_group("player")
 	mirror.connect("entered", self, "_on_mirror_entered")
+	timer.stop()
 	
 
 func _movement(delta) -> void:
