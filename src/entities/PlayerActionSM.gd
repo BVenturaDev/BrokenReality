@@ -23,6 +23,7 @@ func _input(event: InputEvent) -> void:
 			yield(get_tree().create_timer(1.0), "timeout")
 			state = states.idle
 		if Input.is_action_just_pressed("jump"):
+			parent.velocity.y = 0
 			parent.velocity.y += parent.jump_height
 			state = states.jump
 
@@ -35,10 +36,14 @@ func _state_logic(delta):
 func _get_transition(delta):
 	match state:
 		states.idle:
-			if parent.velocity.x != 0 or parent.velocity.z != 0:
+			if !parent.is_on_floor():
+				return states.jump
+			elif parent.velocity.x != 0 or parent.velocity.z != 0:
 				return states.walk
 		states.walk:
-			if parent.velocity.x == 0 and parent.velocity.z == 0:
+			if !parent.is_on_floor():
+				return states.jump
+			elif parent.velocity.x == 0 and parent.velocity.z == 0:
 				return states.idle
 		states.jump:
 			if parent.is_on_floor():
@@ -48,7 +53,7 @@ func _get_transition(delta):
 func _enter_state(new_state, old_state):
 	match state:
 		states.idle:
-			parent.velocity.y = 0
+			pass
 
 func _exit_state(old_state, new_state):
 	match state: 
