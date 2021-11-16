@@ -4,11 +4,11 @@ extends KinematicBody
 var velocity : Vector3 
 var direction : Vector2
 var acceleration = 10
-var max_speed = 200
+var max_speed = 50
 var friction = 10
 var gravity = -50
 var rotation_angle = 45
-var jump_height = 20
+var jump_height = 15
 var bullet : PackedScene = preload("res://scenes/entities/Bullet.tscn")
 
 onready var camera_rotator = $CameraRotator
