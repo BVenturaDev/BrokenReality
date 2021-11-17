@@ -12,8 +12,9 @@ var jump_height = 20
 var bullet : PackedScene = preload("res://scenes/entities/Bullet.tscn")
 var shoot_recoil = 0.0
 var aim_lenght = 8
+var hitbox_distance = 2.0
 var max_sanity = 100
-var sanity : float = max_sanity 
+var sanity : float = max_sanity setget set_sanity
 var sanity_drop_rate = 5
 var sanity_up_rate = 5
 var enemy_sanity_drop_rate = 80
@@ -38,7 +39,7 @@ func _ready() -> void:
 	timer.stop()
 	var new_dialog = Dialogic.start('First Dialogue') 
 	add_child(new_dialog)
-	
+
 
 func _movement(delta) -> void:
 	direction.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
@@ -58,9 +59,9 @@ func _movement(delta) -> void:
 
 func _attack() -> void:
 	if vp.get_mouse_position().x > vp_size.x/2 :
-		hitbox.translation.x = 2
+		hitbox.translation.x =  hitbox_distance 
 	if vp.get_mouse_position().x < vp_size.x/2 :
-		hitbox.translation.x = -2
+		hitbox.translation.x = -hitbox_distance 
 	var objectives = hitbox.get_overlapping_bodies()
 	for objective in objectives:
 		if objective.has_method("hitted"):
@@ -120,6 +121,11 @@ func _on_mirror_entered() -> void:
 			sm.state = sm.states.inverted
 		sm.states.inverted:
 			sm.state = sm.states.normal
-	
+
+func set_sanity(value) -> void:
+	sanity = value
+	if sanity == 0:
+		print("you dead")
+
 
 
