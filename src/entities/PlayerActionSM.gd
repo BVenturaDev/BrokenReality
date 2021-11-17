@@ -8,15 +8,17 @@ func _ready() -> void:
 	add_state("attack")
 	add_state("shoot")
 	add_state("push")
+	add_state("talk")
 	call_deferred("set_state", states.idle)
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if [states.idle, states.walk, states.run].has(state):
 		if Input.is_action_just_pressed("left_click"):
 			parent._attack()
 			state = states.attack
 			yield(get_tree().create_timer(0.5), "timeout")
 			state = states.idle
+			get_tree().set_input_as_handled()
 		if Input.is_action_just_released("right_click") and parent.timer.is_stopped():
 			parent.aim.visible = false
 			parent._shoot()
@@ -24,10 +26,12 @@ func _input(event: InputEvent) -> void:
 			state = states.shoot
 			yield(get_tree().create_timer(0.5), "timeout")
 			state = states.idle
+			get_tree().set_input_as_handled()
 		if Input.is_action_just_pressed("jump"):
 			parent.velocity.y = 0
 			parent.velocity.y += parent.jump_height
 			state = states.jump
+			get_tree().set_input_as_handled()
 
 func _state_logic(delta):
 	if [states.idle, states.walk, states.run].has(state):

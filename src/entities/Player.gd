@@ -19,6 +19,7 @@ var sanity_drop_rate = 3
 var sanity_up_rate = 5
 var enemy_sanity_drop_rate = 30
 var enemy_sanity_distance_trigger = 5
+var talking := false setget set_talking
 
 
 onready var camera_rotator = $CameraRotator
@@ -37,8 +38,7 @@ func _ready() -> void:
 	add_to_group("player")
 	mirror.connect("entered", self, "_on_mirror_entered")
 	timer.stop()
-	var new_dialog = Dialogic.start('First Dialogue') 
-	add_child(new_dialog)
+
 
 
 func _movement(delta) -> void:
@@ -127,6 +127,13 @@ func set_sanity(value) -> void:
 	sanity = value
 	if sanity == 0:
 		print("you dead")
+
+func set_talking(value) -> void:
+	talking = value
+	if talking == true:
+		var new_dialog = Dialogic.start('First Dialogue') 
+		add_child(new_dialog)
+		
 
 
 
