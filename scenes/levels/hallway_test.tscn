@@ -23,7 +23,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 135, 0, 93 )
 environment = ExtResource( 10 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.707107, -0.5, 0.5, 0.183013, 0.812422, 0.553603, -0.683013, -0.29995, 0.665976, 15.0439, 29.6386, 47.0003 )
+transform = Transform( 0.859789, -0.40533, 0.310596, 0.183013, 0.812422, 0.553603, -0.476727, -0.419139, 0.772693, 15.0439, 37.6386, 47.0003 )
 shadow_bias = -0.25
 shadow_contact = 0.5
 directional_shadow_max_distance = 200.0

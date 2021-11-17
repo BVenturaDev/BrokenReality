@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/prefabs/hallway_dead_end/hallway_dead_end.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/prefabs/hallway_dead_end/hallway_dead_end_z.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/prefabs/hallway_crossing/hallway_crossing.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/prefabs/hallway_crossing/hallway_t_crossing.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/prefabs/hallway/hallway_turn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/prefabs/hallway/hallway.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/prefabs/hallway/hallway_z.tscn" type="PackedScene" id=7]
+
+[node name="main_map" type="Spatial"]
+
+[node name="intro_zone" type="Spatial" parent="."]
+
+[node name="hallway" parent="intro_zone" instance=ExtResource( 6 )]
+
+[node name="hallway2" parent="intro_zone" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 0 )
+
+[node name="hallway3" parent="intro_zone" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 0 )
+
+[node name="hallway4" parent="intro_zone" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 81, 0, 0 )
+
+[node name="hallway5" parent="intro_zone" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 270, 0, 0 )
+
+[node name="hallway6" parent="intro_zone" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 297, 0, 0 )
+
+[node name="hallway7" parent="intro_zone" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 324, 0, 0 )
+
+[node name="hallway8" parent="intro_zone" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 351, 0, 0 )
+
+[node name="hallway9" parent="intro_zone" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 270, 0, 93 )
+
+[node name="hallway10" parent="intro_zone" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 297, 0, 93 )
+
+[node name="hallway11" parent="intro_zone" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 324, 0, 93 )
+
+[node name="hallway12" parent="intro_zone" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 351, 0, 93 )
+
+[node name="hallway_crossing" parent="intro_zone" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 0 )
+
+[node name="hallway_dead_end_z" parent="intro_zone" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, -93 )
+
+[node name="hallway_t_crossing" parent="intro_zone" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 378, 0, 0 )
+
+[node name="hallway_dead_end" parent="intro_zone" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 459, 0, 0 )
+
+[node name="hallway_turn" parent="intro_zone" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, 270, 0, 93 )
+
+[node name="hallway_turn2" parent="intro_zone" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 378, 0, 93 )
+
+[node name="hallway_t_crossing2" parent="intro_zone" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189, 0, 0 )
+
+[node name="hallway_z" parent="intro_zone" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 27 )
+
+[node name="hallway_z2" parent="intro_zone" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 54 )
