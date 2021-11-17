@@ -4,7 +4,7 @@
 [ext_resource path="res://src/entities/Player.gd" type="Script" id=2]
 [ext_resource path="res://src/entities/PlayerActionSM.gd" type="Script" id=3]
 [ext_resource path="res://src/entities/WorldModeSM.gd" type="Script" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/Aim.png" type="Texture" id=5]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.833778, 1.56968, 1.45797 )
@@ -86,12 +86,12 @@ anims/RESET = SubResource( 3 )
 anims/Walk = SubResource( 4 )
 
 [node name="Aim" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0799751, 1.4, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.106871, 1.4, 0 )
 visible = false
-modulate = Color( 0.027451, 0.596078, 0.623529, 0.698039 )
+modulate = Color( 1, 1, 1, 0.670588 )
 texture = ExtResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.0
 one_shot = true
 autostart = true

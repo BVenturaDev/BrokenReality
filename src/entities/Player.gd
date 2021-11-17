@@ -15,10 +15,10 @@ var aim_lenght = 8
 var hitbox_distance = 2.0
 var max_sanity = 100
 var sanity : float = max_sanity setget set_sanity
-var sanity_drop_rate = 5
+var sanity_drop_rate = 3
 var sanity_up_rate = 5
-var enemy_sanity_drop_rate = 80
-var enemy_sanity_distance_trigger = 8
+var enemy_sanity_drop_rate = 30
+var enemy_sanity_distance_trigger = 5
 
 
 onready var camera_rotator = $CameraRotator
@@ -69,7 +69,8 @@ func _attack() -> void:
 
 func _shoot() -> void:
 	var new_bullet = bullet.instance()
-	new_bullet.global_transform = self.global_transform
+	new_bullet.global_transform.origin = self.global_transform.origin
+	new_bullet.translation = Vector3(new_bullet.translation.x, 0.1, new_bullet.translation.z)
 	if (vp.get_mouse_position().y < vp_slope * vp.get_mouse_position().x 
 		and vp.get_mouse_position().y > -vp_slope * vp.get_mouse_position().x + vp.size.y ):
 			new_bullet.direction = Vector3(1,0,0)
@@ -91,16 +92,16 @@ func _shoot() -> void:
 func _aim() -> void:
 	if (vp.get_mouse_position().y < vp_slope * vp.get_mouse_position().x 
 		and vp.get_mouse_position().y > -vp_slope * vp.get_mouse_position().x + vp.size.y ):
-			aim.translation = Vector3(aim_lenght,1.4,0) 
+			aim.translation = Vector3(aim_lenght,0.1,0) 
 	if (vp.get_mouse_position().y > vp_slope * vp.get_mouse_position().x 
 		and vp.get_mouse_position().y < -vp_slope * vp.get_mouse_position().x + vp.size.y ):
-			aim.translation = Vector3(-aim_lenght,1.4,0)
+			aim.translation = Vector3(-aim_lenght,0.1,0)
 	if (vp.get_mouse_position().y < vp_slope * vp.get_mouse_position().x 
 		and vp.get_mouse_position().y < -vp_slope * vp.get_mouse_position().x + vp.size.y ):
-			aim.translation = Vector3(0,1.4,-aim_lenght) 
+			aim.translation = Vector3(0,0.1,-aim_lenght) 
 	if (vp.get_mouse_position().y > vp_slope * vp.get_mouse_position().x 
 		and vp.get_mouse_position().y > -vp_slope * vp.get_mouse_position().x + vp.size.y ):
-			aim.translation = Vector3(0,1.4,aim_lenght) 
+			aim.translation = Vector3(0,0.1,aim_lenght) 
 
 func _going_insane(delta) -> void:
 	sanity += -sanity_drop_rate * delta

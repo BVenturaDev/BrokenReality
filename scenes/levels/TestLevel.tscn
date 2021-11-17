@@ -33,7 +33,7 @@ extents = Vector3( 5, 1, 5 )
 
 [sub_resource type="Curve3D" id=7]
 _data = {
-"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -8.50646, 0.984732, 21.2031, 0, 0, 0, 0, 0, 0, -0.329494, 1.21199, 12.4832, 0, 0, 0, 0, 0, 0, -4.00577, 1.47803, 29.1933, 0, 0, 0, 0, 0, 0, -8.50646, 0.984732, 21.2031 ),
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -8.28245, 0.0361397, 21.194, 0, 0, 0, 0, 0, 0, -0.267002, 0.065907, 12.8708, 0, 0, 0, 0, 0, 0, 7.5498, 0.11024, 22.1259, 0, 0, 0, 0, 0, 0, -8.28245, 0.0361397, 21.194 ),
 "tilts": PoolRealArray( 0, 0, 0, 0 )
 }
 
@@ -85,13 +85,13 @@ transform = Transform( -0.811806, -0.174829, 0.557141, 0.55412, -0.531597, 0.640
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.699, 1.77121, -12.319 )
 
 [node name="Bell" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.198, 0.4, 15.276 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.198, 0.14261, 15.276 )
 
 [node name="Path" type="Path" parent="."]
 curve = SubResource( 7 )
 
 [node name="PathFollow" type="PathFollow" parent="Path"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.50646, 0.984732, 21.2031 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.28245, 0.0361397, 21.194 )
 rotation_mode = 0
 
 [node name="Enemy" parent="Path/PathFollow" instance=ExtResource( 4 )]
@@ -108,11 +108,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.4035, 0 )
 [node name="FinalDoor" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.9056, 0, 0 )
 
-[node name="FinalLever" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.278, 0, -13.842 )
-
-[node name="FinalLever2" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.278, 0, 7.69199 )
-
 [node name="Respawner" parent="." instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.66785 )
+
+[node name="FinalLever" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5808, 0, 7.96811 )
+
+[node name="FinalLever2" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5808, 0, 1.04025 )
+
+[node name="FinalLever3" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5808, 0, -7.90368 )
