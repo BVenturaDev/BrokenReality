@@ -8,12 +8,18 @@
 [ext_resource path="res://scenes/prefabs/hallway/hallway.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/prefabs/hallway/hallway_z.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Env.tres" type="Environment" id=8]
+<<<<<<< Updated upstream
 [ext_resource path="res://scenes/prefabs/chamber/chamber_01.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/prefabs/hallway_crossing/hallway_t_crossing_z.tscn" type="PackedScene" id=10]
+=======
+[ext_resource path="res://scenes/prefabs/hallway_crossing/hallway_t_crossing_z.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/prefabs/hallway/hallway_z_gap.tscn" type="PackedScene" id=10]
+>>>>>>> Stashed changes
 
 [node name="main_map" type="Spatial"]
 
 [node name="intro_zone" type="Spatial" parent="."]
+visible = false
 
 [node name="hallway" parent="intro_zone" instance=ExtResource( 6 )]
 
@@ -76,6 +82,245 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 27 )
 
 [node name="hallway_z2" parent="intro_zone" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 54 )
+
+[node name="South-West-Maze" type="Spatial" parent="."]
+
+[node name="hallway_t_crossing_z" parent="South-West-Maze" instance=ExtResource( 9 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 46 )
+
+[node name="hallway_t_crossing_z2" parent="South-West-Maze" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -39, 0, 139 )
+
+[node name="hallway_dead_end_z" parent="South-West-Maze" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, -39, 0, 232 )
+
+[node name="hallway_crossing" parent="South-West-Maze" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 139 )
+
+[node name="hallway_turn" parent="South-West-Maze" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 46 )
+
+[node name="hallway_z" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 166 )
+
+[node name="hallway" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -147, 0, 46 )
+
+[node name="hallway2" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -173, 0, 46 )
+
+[node name="hallway3" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -200, 0, 46 )
+
+[node name="hallway4" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -226, 0, 46 )
+
+[node name="hallway5" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -252, 0, 46 )
+
+[node name="hallway6" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -278, 0, 46 )
+
+[node name="hallway7" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -305, 0, 46 )
+
+[node name="hallway8" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -331, 0, 46 )
+
+[node name="hallway27" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -357, 0, 46 )
+
+[node name="hallway9" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -147, 0, 139 )
+
+[node name="hallway10" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -173, 0, 139 )
+
+[node name="hallway12" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -281, 0, 139 )
+
+[node name="hallway13" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, 487 )
+
+[node name="hallway14" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -92, 0, 487 )
+
+[node name="hallway15" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -119, 0, 487 )
+
+[node name="hallway16" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -145, 0, 487 )
+
+[node name="hallway17" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -172, 0, 487 )
+
+[node name="hallway18" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -198, 0, 487 )
+
+[node name="hallway19" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -225, 0, 487 )
+
+[node name="hallway20" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -251, 0, 487 )
+
+[node name="hallway21" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -278, 0, 487 )
+
+[node name="hallway22" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -304, 0, 487 )
+
+[node name="hallway23" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -331, 0, 487 )
+
+[node name="hallway24" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -357, 0, 487 )
+
+[node name="hallway25" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -147, 0, 433 )
+
+[node name="hallway26" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -174, 0, 433 )
+
+[node name="hallway28" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -201, 0, 433 )
+
+[node name="hallway29" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -228, 0, 433 )
+
+[node name="hallway30" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -249, 0, 433 )
+
+[node name="hallway31" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -276, 0, 433 )
+
+[node name="hallway32" parent="South-West-Maze" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -276, 0, 340 )
+
+[node name="hallway_z2" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 193 )
+
+[node name="hallway_z3" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 220 )
+
+[node name="hallway_z4" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 0, 340 )
+
+[node name="hallway_z5" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 0, 367 )
+
+[node name="hallway_z6" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 0, 394 )
+
+[node name="hallway_z7" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -438, 0, 367 )
+
+[node name="hallway_z8" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -438, 0, 394 )
+
+[node name="hallway_z9" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -438, 0, 220 )
+
+[node name="hallway_z17" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -519, 0, 247 )
+
+[node name="hallway_z18" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -519, 0, 220 )
+
+[node name="hallway_z19" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -519, 0, 247 )
+
+[node name="hallway_z20" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -519, 0, 220 )
+
+[node name="hallway_z10" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -438, 0, 247 )
+
+[node name="hallway_z11" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -438, 0, 166 )
+
+[node name="hallway_z12" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -438, 0, 193 )
+
+[node name="hallway_z13" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -438, 0, 112 )
+
+[node name="hallway_z14" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -438, 0, 139 )
+
+[node name="hallway_z15" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -438, 0, 85 )
+
+[node name="hallway_z16" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 340 )
+
+[node name="hallway_z21" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -357, 0, 247 )
+
+[node name="hallway_z22" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -357, 0, 220 )
+
+[node name="hallway_z23" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -357, 0, 193 )
+
+[node name="hallway_z24" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -357, 0, 166 )
+
+[node name="hallway_z25" parent="South-West-Maze" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -254, 0, 256 )
+
+[node name="hallway_t_crossing_z3" parent="South-West-Maze" instance=ExtResource( 9 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 0, 313 )
+
+[node name="hallway_t_crossing_z4" parent="South-West-Maze" instance=ExtResource( 9 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -173, 0, 232 )
+
+[node name="hallway_turn2" parent="South-West-Maze" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 0, 313 )
+
+[node name="hallway_turn3" parent="South-West-Maze" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, -120, 0, 433 )
+
+[node name="hallway_turn4" parent="South-West-Maze" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, -39, 0, 487 )
+
+[node name="hallway_t_crossing" parent="South-West-Maze" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -254, 0, 139 )
+
+[node name="hallway_turn5" parent="South-West-Maze" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, -357, 0, 487 )
+
+[node name="hallway_turn6" parent="South-West-Maze" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -276, 0, 139 )
+
+[node name="hallway_turn11" parent="South-West-Maze" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -519, 0, 193 )
+
+[node name="hallway_turn7" parent="South-West-Maze" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, 0, 0, 1, 8.74228e-08, 0, 8.74228e-08, -1, -438, 0, 340 )
+
+[node name="hallway_turn8" parent="South-West-Maze" instance=ExtResource( 5 )]
+transform = Transform( -1, 7.64274e-15, 8.74228e-08, 0, 1, -8.74228e-08, 8.74228e-08, 8.74228e-08, 1, -357, 0, 46 )
+
+[node name="hallway_turn9" parent="South-West-Maze" instance=ExtResource( 5 )]
+transform = Transform( -1, -8.74228e-08, -1.50996e-07, -8.74228e-08, 1, 8.74228e-08, 1.50996e-07, 8.74228e-08, -1, -276, 0, 433 )
+
+[node name="hallway_turn10" parent="South-West-Maze" instance=ExtResource( 5 )]
+transform = Transform( 1, -8.74228e-08, -1.50996e-07, 8.74228e-08, 1, 8.74228e-08, -1.50996e-07, 8.74228e-08, -1, -254, 0, 340 )
+
+[node name="hallway_crossing2" parent="South-West-Maze" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -438, 0, 340 )
+
+[node name="hallway_z_gap" parent="South-West-Maze" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -438, 0, 70 )
+
+[node name="hallway_crossing3" parent="South-West-Maze" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -357, 0, 340 )
+
+[node name="hallway_dead_end" parent="South-West-Maze" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -173, 0, 232 )
+
+[node name="hallway_dead_end2" parent="South-West-Maze" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -519, 0, 193 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 8 )
