@@ -36,6 +36,8 @@ func _ready() -> void:
 	add_to_group("player")
 	mirror.connect("entered", self, "_on_mirror_entered")
 	timer.stop()
+	var new_dialog = Dialogic.start('First Dialogue') 
+	add_child(new_dialog)
 	
 
 func _movement(delta) -> void:

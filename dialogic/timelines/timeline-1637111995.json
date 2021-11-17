@@ -1,0 +1,67 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1637111920.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1637111920.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hello There! You seem lost my dear... thing... stuff...?"
+		},
+		{
+			"action": "join",
+			"character": "character-1637111697.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1637111697.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "What is this... where am I...?"
+		},
+		{
+			"character": "character-1637111920.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hmm...seems to me you should know the awnser to that...\nAnd taking a closer look at you, you appear to be human. \nAt least sufficiently..."
+		},
+		{
+			"character": "character-1637111697.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Human?... yes... I think I am."
+		},
+		{
+			"character": "character-1637111920.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Perfect! here have this.\n* Hands Sword\n Humans like to kill other stuff with it. "
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4 - DEV",
+		"file": "timeline-1637111995.json",
+		"name": "First Dialogue"
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"color": "#ff119110",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1637111920.json",
+	"mirror_portraits": false,
+	"name": "NPC",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://addons/dialogic/Example Assets/portraits/df-1.png"
+		}
+	],
+	"scale": 100
+}
