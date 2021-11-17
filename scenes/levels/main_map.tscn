@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/prefabs/hallway_dead_end/hallway_dead_end.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/prefabs/hallway_dead_end/hallway_dead_end_z.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://scenes/prefabs/hallway/hallway.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/prefabs/hallway/hallway_z.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Env.tres" type="Environment" id=8]
+[ext_resource path="res://scenes/prefabs/chamber/chamber_01.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/prefabs/hallway_crossing/hallway_t_crossing_z.tscn" type="PackedScene" id=10]
 
 [node name="main_map" type="Spatial"]
 
@@ -83,3 +85,19 @@ transform = Transform( 0.859789, -0.40533, 0.310596, 0.183013, 0.812422, 0.55360
 shadow_bias = -0.25
 shadow_contact = 0.5
 directional_shadow_max_distance = 200.0
+
+[node name="area_02" type="Spatial" parent="."]
+
+[node name="chamber_01" parent="area_02" instance=ExtResource( 9 )]
+
+[node name="hallway_turn" parent="area_02" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, -189, 0, 0 )
+
+[node name="hallway_dead_end_z" parent="area_02" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -270, 0, -93 )
+
+[node name="hallway_z" parent="area_02" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -135, 0, -186 )
+
+[node name="hallway_t_crossing_z" parent="area_02" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -213 )

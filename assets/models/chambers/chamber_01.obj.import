@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/chamber_01.obj-6f85b166792f791e3fb06a2b4b125c00.mesh"
+
+[deps]
+
+files=[ "res://.import/chamber_01.obj-6f85b166792f791e3fb06a2b4b125c00.mesh" ]
+
+source_file="res://assets/models/chambers/chamber_01.obj"
+dest_files=[ "res://.import/chamber_01.obj-6f85b166792f791e3fb06a2b4b125c00.mesh", "res://.import/chamber_01.obj-6f85b166792f791e3fb06a2b4b125c00.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
