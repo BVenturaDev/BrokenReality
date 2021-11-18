@@ -2,24 +2,24 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/texture_0.png-94deb15d6860152ea46a7acbd84cbf05.stex"
+path="res://.import/texture_0.png-f6262f9babf6b97a3d4bf5898dca02bf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/models/fence/texture_0.png"
-dest_files=[ "res://.import/texture_0.png-94deb15d6860152ea46a7acbd84cbf05.stex" ]
+source_file="res://assets/models/block/texture_0.png"
+dest_files=[ "res://.import/texture_0.png-f6262f9babf6b97a3d4bf5898dca02bf.stex" ]
 
 [params]
 
 compress/mode=3
 compress/lossy_quality=0.7
-compress/hdr_mode=0
+compress/hdr_mode=1
 compress/bptc_ldr=0
-compress/normal_map=0
-flags/repeat=0
+compress/normal_map=2
+flags/repeat=true
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
