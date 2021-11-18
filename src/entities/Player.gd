@@ -3,8 +3,8 @@ extends KinematicBody
 
 var velocity : Vector3 
 var direction : Vector2
-var acceleration = 10
-var max_speed = 100
+var acceleration = 30
+var max_speed = 200
 var friction = 10
 var gravity = -50
 var rotation_angle = 45
@@ -15,7 +15,7 @@ var aim_lenght = 8
 var hitbox_distance = 2.0
 var max_sanity = 100
 var sanity : float = max_sanity setget set_sanity
-var sanity_drop_rate = 3
+var sanity_drop_rate = 0
 var sanity_up_rate = 5
 var enemy_sanity_drop_rate = 30
 var enemy_sanity_distance_trigger = 5
