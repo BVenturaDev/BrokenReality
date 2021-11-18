@@ -213,3 +213,235 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 108, 0, -213 )
 
 [node name="hallway_turn2" parent="area_03" instance=ExtResource( 5 )]
 transform = Transform( -1, 8.74228e-08, 0, 8.74228e-08, 1, 0, 0, 0, 1, 189, 0, -306 )
+
+[node name="BottomMiddle" type="Spatial" parent="."]
+
+[node name="hallway_t_crossing_z" parent="BottomMiddle" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, 186 )
+
+[node name="hallway" parent="BottomMiddle" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, 186 )
+
+[node name="hallway3" parent="BottomMiddle" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 81, 0, 186 )
+
+[node name="hallway4" parent="BottomMiddle" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189, 0, 186 )
+
+[node name="hallway5" parent="BottomMiddle" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 216, 0, 186 )
+
+[node name="hallway2" parent="BottomMiddle" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 186 )
+
+[node name="hallway_dead_end_z" parent="BottomMiddle" instance=ExtResource( 2 )]
+transform = Transform( 1, 8.74228e-08, 0, -8.74228e-08, 1, 0, 0, 0, 1, 0, 0, 93 )
+
+[node name="hallway_t_crossing" parent="BottomMiddle" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 186 )
+
+[node name="hallway_z_gap" parent="BottomMiddle" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 105 )
+
+[node name="hallway_crossing" parent="BottomMiddle" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 186 )
+
+[node name="hallway_z" parent="BottomMiddle" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 81 )
+
+[node name="hallway_turn" parent="BottomMiddle" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, 189, 0, 372 )
+
+[node name="hallway_turn2" parent="BottomMiddle" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, 1, 243, 0, 186 )
+
+[node name="hallway_z2" parent="BottomMiddle" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 213 )
+
+[node name="hallway_z3" parent="BottomMiddle" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 240 )
+
+[node name="hallway_z4" parent="BottomMiddle" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 267 )
+
+[node name="hallway_z_gap2" parent="BottomMiddle" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 291 )
+
+[node name="BottomRight" type="Spatial" parent="."]
+
+[node name="chamber_01" parent="BottomRight" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 378, 0, 372 )
+
+[node name="chamber_02" parent="BottomRight" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 432, 0, 372 )
+
+[node name="hallway" parent="BottomRight" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, 351, 0, 558 )
+
+[node name="hallway2" parent="BottomRight" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, 378, 0, 558 )
+
+[node name="hallway3" parent="BottomRight" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, 405, 0, 558 )
+
+[node name="hallway4" parent="BottomRight" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, 432, 0, 558 )
+
+[node name="hallway5" parent="BottomRight" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, 459, 0, 558 )
+
+[node name="hallway6" parent="BottomRight" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, 486, 0, 558 )
+
+[node name="hallway_turn" parent="BottomRight" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, 324, 0, 558 )
+
+[node name="hallway_z" parent="BottomRight" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, -8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 486, 0, 531 )
+
+[node name="hallway_z2" parent="BottomRight" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, -8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 486, 0, 504 )
+
+[node name="hallway_turn2" parent="BottomRight" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, -8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 486, 0, 558 )
+
+[node name="BottomLeft" type="Spatial" parent="."]
+
+[node name="hallway_dead_end_z" parent="BottomLeft" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, -135, 0, 372 )
+
+[node name="hallway_dead_end_z2" parent="BottomLeft" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, 8.74228e-08, 1, 0, 0, 0, 1, -404, 0, 186 )
+
+[node name="hallway_crossing2" parent="BottomLeft" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -215, 0, 452 )
+visible = false
+
+[node name="hallway_turn2" parent="BottomLeft" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, -215, 0, 544 )
+
+[node name="hallway_turn4" parent="BottomLeft" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, -323, 0, 465 )
+
+[node name="hallway_turn3" parent="BottomLeft" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, -296, 0, 636 )
+
+[node name="hallway_turn7" parent="BottomLeft" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, 8.74228e-08, 1, 0, 0, 0, -1, -404, 0, 636 )
+
+[node name="hallway_turn5" parent="BottomLeft" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, 8.74228e-08, 1, 0, 0, 0, -1, -350, 0, 544 )
+
+[node name="hallway_turn6" parent="BottomLeft" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, 8.74228e-08, 1, 0, 0, 0, -1, -350, 0, 544 )
+
+[node name="hallway_turn8" parent="BottomLeft" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 8.74228e-08, 8.74228e-08, 1, 0, 8.74228e-08, -7.64274e-15, 1, -350, 0, 372 )
+
+[node name="hallway_z_gap" parent="BottomLeft" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -485, 0, 312 )
+
+[node name="hallway_z_gap2" parent="BottomLeft" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, -485, 0, 356 )
+
+[node name="hallway" parent="BottomLeft" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -242, 0, 279 )
+
+[node name="hallway9" parent="BottomLeft" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -350, 0, 279 )
+
+[node name="hallway10" parent="BottomLeft" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -377, 0, 279 )
+
+[node name="hallway11" parent="BottomLeft" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -404, 0, 279 )
+
+[node name="hallway4" parent="BottomLeft" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -350, 0, 465 )
+
+[node name="hallway2" parent="BottomLeft" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -323, 0, 544 )
+
+[node name="hallway3" parent="BottomLeft" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -350, 0, 544 )
+
+[node name="hallway5" parent="BottomLeft" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -323, 0, 636 )
+
+[node name="hallway6" parent="BottomLeft" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -350, 0, 636 )
+
+[node name="hallway7" parent="BottomLeft" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -377, 0, 636 )
+
+[node name="hallway8" parent="BottomLeft" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -404, 0, 636 )
+
+[node name="hallway_t_crossing" parent="BottomLeft" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -323, 0, 279 )
+
+[node name="hallway_t_crossing3" parent="BottomLeft" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -215, 0, 279 )
+
+[node name="hallway_t_crossing2" parent="BottomLeft" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -296, 0, 544 )
+
+[node name="hallway_t_crossing_z" parent="BottomLeft" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -135, 0, 279 )
+
+[node name="hallway_t_crossing_z4" parent="BottomLeft" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -350, 0, 465 )
+
+[node name="hallway_t_crossing_z3" parent="BottomLeft" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -215, 0, 452 )
+
+[node name="hallway_z" parent="BottomLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -215, 0, 306 )
+
+[node name="hallway_z4" parent="BottomLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -485, 0, 543 )
+
+[node name="hallway_z5" parent="BottomLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -485, 0, 516 )
+
+[node name="hallway_z6" parent="BottomLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -485, 0, 489 )
+
+[node name="hallway_z7" parent="BottomLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -485, 0, 462 )
+
+[node name="hallway_z8" parent="BottomLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -485, 0, 435 )
+
+[node name="hallway_z10" parent="BottomLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -485, 0, 381 )
+
+[node name="hallway_z11" parent="BottomLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -485, 0, 354 )
+
+[node name="hallway_z12" parent="BottomLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -485, 0, 327 )
+
+[node name="hallway_z9" parent="BottomLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -485, 0, 408 )
+
+[node name="hallway_z2" parent="BottomLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -215, 0, 333 )
+
+[node name="hallway_z3" parent="BottomLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -215, 0, 360 )
+
+[node name="hallway_dead_end" parent="BottomLeft" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -242, 0, 372 )
+
+[node name="hallway_dead_end3" parent="BottomLeft" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -350, 0, 372 )
+
+[node name="hallway_dead_end2" parent="BottomLeft" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -215, 0, 452 )
+
+[node name="hallway_t_crossing_z2" parent="BottomLeft" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -242, 0, 372 )
+
+[node name="hallway_t_crossing_z5" parent="BottomLeft" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -404, 0, 279 )
