@@ -2,8 +2,11 @@ extends KinematicBody
 
 var coin : PackedScene = preload("res://scenes/entities/Coin.tscn")
 
+export var has_coin : bool = true
+
 func hitted() -> void:
-	var new_coin = coin.instance()
-	new_coin.global_transform = self.global_transform
-	get_tree().current_scene.add_child(new_coin)
+	if has_coin:
+		var new_coin = coin.instance()
+		new_coin.global_transform = self.global_transform
+		get_tree().current_scene.add_child(new_coin)
 	queue_free()
