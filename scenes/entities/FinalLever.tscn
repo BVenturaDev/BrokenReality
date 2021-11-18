@@ -1,39 +1,40 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://src/entities/WorldModeSM.gd" type="Script" id=1]
 [ext_resource path="res://src/entities/FinalLever.gd" type="Script" id=2]
-[ext_resource path="res://assets/sprites/Lever.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/New_Assets/lever_right.png" type="Texture" id=3]
+[ext_resource path="res://src/entities/WorldModeSM.gd" type="Script" id=4]
+[ext_resource path="res://assets/sprites/New_Assets/lever_left.png" type="Texture" id=5]
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 0.540821, 0.831302, 0.272326 )
 
-[sub_resource type="AtlasTexture" id=2]
-flags = 23
+[sub_resource type="AtlasTexture" id=9]
+flags = 19
 atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=3]
-flags = 23
+[sub_resource type="AtlasTexture" id=10]
+flags = 19
 atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=4]
-flags = 23
+[sub_resource type="AtlasTexture" id=11]
+flags = 19
 atlas = ExtResource( 3 )
-region = Rect2( 64, 0, 64, 64 )
+region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=5]
-flags = 23
-atlas = ExtResource( 3 )
-region = Rect2( 128, 0, 64, 64 )
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 2 ) ],
+"frames": [ SubResource( 9 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": false,
 "name": "hitted",
 "speed": 5.0
@@ -43,14 +44,16 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.917074, 0 )
-shape = SubResource( 7 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.773744, 0.641688, -0.609324 )
+shape = SubResource( 8 )
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform( 3, 0, 0, 0, -1.31134e-07, 1, 0, -3, -4.37114e-08, 0, 1.94179, 0 )
-modulate = Color( 0.65098, 0.137255, 0.137255, 1 )
-frames = SubResource( 6 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.5, -1.5 )
+pixel_size = 0.1
+shaded = true
+alpha_cut = 2
+frames = SubResource( 7 )
 animation = "hitted"
 
 [node name="ChangeWorldSM" type="Node" parent="."]
-script = ExtResource( 1 )
+script = ExtResource( 4 )

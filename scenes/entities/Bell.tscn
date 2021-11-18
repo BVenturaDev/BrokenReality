@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/sprites/Door.png" type="Texture" id=1]
 [ext_resource path="res://src/entities/Bell.gd" type="Script" id=2]
-[ext_resource path="res://assets/sprites/Bell.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/New_Assets/bell.png" type="Texture" id=3]
 [ext_resource path="res://src/entities/WorldModeSM.gd" type="Script" id=4]
 
 [sub_resource type="BoxShape" id=1]
@@ -15,7 +15,10 @@ extents = Vector3( 0.454426, 1.99525, 1.22772 )
 script = ExtResource( 2 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform( 2, 0, 0, 0, -8.74228e-08, 1, 0, -2, -4.37114e-08, 0, 1.26126, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.5, 0 )
+pixel_size = 0.1
+shaded = true
+alpha_cut = 2
 texture = ExtResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

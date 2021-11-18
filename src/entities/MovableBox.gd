@@ -14,7 +14,7 @@ onready var left := $Left
 onready var right := $Right
 onready var up := $Up
 onready var down := $Down
-onready var player = get_parent().get_node("Player")
+onready var player = get_parent().get_parent().get_node("Player")
 onready var position = translation
 
 
