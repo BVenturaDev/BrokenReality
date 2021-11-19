@@ -105,6 +105,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59.1376, 0, 12.0097 )
 [node name="Fences" parent="Levers_and_Doors/Intro2" index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.46491, 0, -6.08159 )
 
+[node name="fence9" parent="Levers_and_Doors/Intro2/Fences" index="8"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -15.217, 0, 0 )
+
 [node name="Intersection" parent="Levers_and_Doors" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7542, 0, 45.1533 )
 
@@ -1396,7 +1399,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 125.842, 1.49794, 93.2158 )
 [node name="TopLeft" parent="Movable_Blocks" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3218, 1.88015, -51.3258 )
 up_z = 0.0
-down_z = 70.0
+down_z = 5.0
 left_x = 0.0
 right_x = 0.0
 
@@ -1409,8 +1412,8 @@ right_x = 0.0
 
 [node name="BottomLeft" parent="Movable_Blocks" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -110.936, 1.88015, 66.6907 )
-up_z = 10.0
-down_z = 0.0
+up_z = 0.0
+down_z = 5.0
 left_x = 0.0
 right_x = 0.0
 

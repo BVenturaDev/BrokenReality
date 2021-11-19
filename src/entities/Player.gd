@@ -4,7 +4,7 @@ extends KinematicBody
 var velocity : Vector3 
 var direction : Vector2
 var acceleration = 30
-var max_speed = 60
+var max_speed = 50
 var friction = 10
 var gravity = -30
 var rotation_angle = 45
