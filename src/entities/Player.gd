@@ -4,11 +4,11 @@ extends KinematicBody
 var velocity : Vector3 
 var direction : Vector2
 var acceleration = 30
-var max_speed = 50
+var max_speed = 60
 var friction = 10
-var gravity = -50
+var gravity = -30
 var rotation_angle = 45
-var jump_height = 20
+var jump_height = 5
 var bullet : PackedScene = preload("res://scenes/entities/Bullet.tscn")
 var shoot_recoil = 0.0
 var aim_lenght = 8
@@ -30,7 +30,7 @@ onready var light := get_parent().find_node("DirectionalLight")
 onready var vp : Viewport = get_viewport()
 onready var vp_size : Vector2 = get_viewport().size
 onready var vp_slope : float = vp_size.y/vp_size.x 
-onready var mirror = get_parent().get_node("Mirror")
+onready var mirror = get_parent().get_node("Mirrors").get_node("Mirror")
 onready var sm = $WorldModeSM
 onready var timer =$Timer
 

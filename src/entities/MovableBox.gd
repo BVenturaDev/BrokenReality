@@ -7,14 +7,13 @@ export var left_x := -10.0
 export var right_x := 10.0
 
 var direction : Vector3
-var speed = 600
-
+var speed = 300
 
 onready var left := $Left
 onready var right := $Right
 onready var up := $Up
 onready var down := $Down
-onready var player = get_parent().get_node("Player")
+onready var player = get_parent().get_parent().get_node("Player")
 onready var position = translation
 
 

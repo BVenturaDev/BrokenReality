@@ -2,7 +2,7 @@ extends StaticBody
 
 var rotation_angle = 45
 
-onready var player = get_parent().find_node("Player")
+onready var player = get_parent().get_parent().find_node("Player")
 onready var sprite = $AnimatedSprite3D
 onready var hitbox = $HitBox
 

@@ -5,7 +5,7 @@ signal entered
 var rotation_angle = 45
 var has_player := false
 
-onready var player = get_parent().get_node("Player")
+onready var player = get_parent().get_parent().get_node("Player")
 onready var sprite = $Sprite3D
 onready var hitbox = $HitBox
 
