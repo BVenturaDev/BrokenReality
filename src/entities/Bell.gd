@@ -7,5 +7,5 @@ onready var sprite = $Sprite3D
 
 
 func ringed() -> void:
-	if self.has_node("OpenableDoor"):
+	if self.has_node("Fences"):
 		fences.queue_free()

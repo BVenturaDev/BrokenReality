@@ -3,7 +3,7 @@ extends KinematicBody
 var hitted := false 
 var rotation_angle = 45
 
-onready var final_door = get_parent().find_node("FinalDoor")
+onready var final_door = get_parent().get_parent().find_node("FinalDoor")
 onready var sprite = $AnimatedSprite3D
 
 func _init() -> void:

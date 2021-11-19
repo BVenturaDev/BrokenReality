@@ -7,8 +7,7 @@ export var left_x := -10.0
 export var right_x := 10.0
 
 var direction : Vector3
-var speed = 600
-
+var speed = 300
 
 onready var left := $Left
 onready var right := $Right

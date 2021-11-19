@@ -6,9 +6,9 @@ var direction : Vector2
 var acceleration = 30
 var max_speed = 60
 var friction = 10
-var gravity = -50
+var gravity = -30
 var rotation_angle = 45
-var jump_height = 20
+var jump_height = 5
 var bullet : PackedScene = preload("res://scenes/entities/Bullet.tscn")
 var shoot_recoil = 0.0
 var aim_lenght = 8
