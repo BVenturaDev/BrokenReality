@@ -36,6 +36,7 @@ onready var vp : Viewport = get_viewport()
 onready var vp_size : Vector2 = get_viewport().size
 onready var vp_slope : float = vp_size.y/vp_size.x 
 onready var sm = $WorldModeSM
+onready var sma = $PlayerActionSM
 onready var timer =  $Timer
 onready var respawner = get_parent().get_node("Respawner")
 onready var dialog_intro = Dialogic.start('Intro') 
