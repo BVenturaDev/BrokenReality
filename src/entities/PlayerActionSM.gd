@@ -1,5 +1,6 @@
 extends StateMachine
 
+
 func _ready() -> void:
 	add_state("idle")
 	add_state("walk")
@@ -13,13 +14,13 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if [states.idle, states.walk, states.run].has(state):
-		if Input.is_action_just_pressed("left_click"):
+		if Input.is_action_just_pressed("left_click") and parent.has_attack:
 			parent._attack()
 			state = states.attack
 			yield(get_tree().create_timer(0.5), "timeout")
 			state = states.idle
 			get_tree().set_input_as_handled()
-		if Input.is_action_just_released("right_click") and parent.timer.is_stopped():
+		if Input.is_action_just_released("right_click") and parent.timer.is_stopped() and parent.has_gun:
 			parent.aim.visible = false
 			parent._shoot()
 			parent.timer.start()
@@ -27,7 +28,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			yield(get_tree().create_timer(0.5), "timeout")
 			state = states.idle
 			get_tree().set_input_as_handled()
-		if Input.is_action_just_pressed("jump"):
+		if Input.is_action_just_pressed("jump") and parent.sm.state == parent.sm.states.inverted:
 			parent.velocity.y = 0
 			parent.velocity.y += parent.jump_height
 			state = states.jump
@@ -35,7 +36,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _state_logic(delta):
 	if [states.idle, states.walk, states.run].has(state):
-		if Input.is_action_pressed("right_click") and parent.timer.is_stopped() :
+		if Input.is_action_pressed("right_click") and parent.timer.is_stopped() and parent.has_gun :
 			parent.aim.visible = true
 			parent._aim()
 	

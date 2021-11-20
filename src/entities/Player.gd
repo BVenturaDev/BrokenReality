@@ -22,6 +22,9 @@ var enemy_sanity_distance_trigger = 5
 var talking := false setget set_talking
 var dialog : String setget set_dialog
 var current_dialog
+var has_attack := false
+var has_push := false
+var has_gun := false
 
 
 onready var camera_rotator = $CameraRotator
@@ -150,14 +153,17 @@ func set_dialog(value) -> void:
 	match dialog:
 		"intro":
 			current_dialog = dialog_intro
+			has_attack = true
 		"respawn":
 			current_dialog = dialog_respawn
 		"mirror":
 			current_dialog = dialog_mirror
 		"push":
 			current_dialog = dialog_push
+			has_push = true
 		"gun":
 			current_dialog = dialog_gun
+			has_gun = true
 		"win":
 			current_dialog = dialog_win
 
