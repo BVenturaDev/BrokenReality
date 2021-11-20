@@ -125,6 +125,11 @@ func _enemy_sanity_drain(delta) -> void:
 		if distance < enemy_sanity_distance_trigger:
 			distance = clamp(distance, 1, enemy_sanity_distance_trigger)
 			sanity += - enemy_sanity_drop_rate * delta * 1/distance
+			if enemy.detection != true:
+				enemy.detection = true
+		if distance > enemy_sanity_distance_trigger and enemy.detection == true:
+			enemy.detection = false
+
 
 func _on_mirror_entered() -> void:
 	match sm.state:
