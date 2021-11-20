@@ -105,9 +105,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59.1376, 0, 12.0097 )
 [node name="Fences" parent="Levers_and_Doors/Intro2" index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.46491, 0, -6.08159 )
 
-[node name="fence9" parent="Levers_and_Doors/Intro2/Fences" index="8"]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -15.217, 0, 0 )
-
 [node name="Intersection" parent="Levers_and_Doors" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7542, 0, 45.1533 )
 
