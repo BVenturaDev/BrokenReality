@@ -106,15 +106,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.2888, 0, -77.5942 )
 
 [node name="Box" parent="Boxes" instance=ExtResource( 17 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 64.7874, 0, 1 )
+has_coin = false
 
 [node name="Box2" parent="Boxes" instance=ExtResource( 17 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 64.7874, 0, -1.83219 )
+has_coin = false
 
 [node name="Box3" parent="Boxes" instance=ExtResource( 17 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.64465, 0, 1 )
+has_coin = false
 
 [node name="Box4" parent="Boxes" instance=ExtResource( 17 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.64465, 0, -1.83219 )
+has_coin = false
 
 [node name="Levers_and_Doors" type="Spatial" parent="."]
 

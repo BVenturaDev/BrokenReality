@@ -109,5 +109,5 @@ shaded = true
 alpha_cut = 2
 frames = SubResource( 4 )
 animation = "agro"
-frame = 1
+frame = 3
 playing = true

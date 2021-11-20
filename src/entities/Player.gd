@@ -149,10 +149,10 @@ func set_sanity(value) -> void:
 func set_talking(value) -> void:
 	talking = value
 	if talking == true:
-		sm.state = sm.states.talk
+		sma.state = sma.states.talk
 		add_child(current_dialog)
 	if talking == false:
-		sm.state = sm.states.idle
+		sma.state = sma.states.idle
 
 func set_dialog(value) -> void:
 	dialog = value
