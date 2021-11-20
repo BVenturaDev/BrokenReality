@@ -32,13 +32,13 @@ script = ExtResource( 3 )
 script = ExtResource( 4 )
 
 [node name="HitBox" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.865734, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="HitBox"]
 shape = SubResource( 2 )
 
 [node name="Aim" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.106871, 1.4, 0 )
-visible = false
 modulate = Color( 1, 1, 1, 0.670588 )
 texture = ExtResource( 5 )
 

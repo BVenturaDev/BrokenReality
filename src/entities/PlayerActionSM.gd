@@ -35,11 +35,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _state_logic(delta):
 	if [states.idle, states.walk, states.run].has(state):
-			if Input.is_action_pressed("right_click") and parent.timer.is_stopped() :
-				parent.aim.visible = true
-				parent._aim()
+		if Input.is_action_pressed("right_click") and parent.timer.is_stopped() :
+			parent.aim.visible = true
+			parent._aim()
 	
-	if ![states.attack, states.shoot,].has(state):
+	if ![states.attack, states.shoot, states.talk].has(state):
 		parent._movement(delta)
 		if state == states.jump:
 			parent.velocity.y += parent.gravity * delta

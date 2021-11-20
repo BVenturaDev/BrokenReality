@@ -5,6 +5,7 @@
 [ext_resource path="res://src/entities/WorldModeSM.gd" type="Script" id=3]
 
 [sub_resource type="BoxShape" id=1]
+extents = Vector3( 1, 1.08224, 1 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 23
@@ -25,10 +26,11 @@ animations = [ {
 } ]
 
 [node name="Enemy" type="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.845126, 0 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.952442, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2912, 0 )
 shape = SubResource( 1 )
 
 [node name="WorldModeSM" type="Node" parent="."]

@@ -20,6 +20,8 @@ var sanity_up_rate = 5
 var enemy_sanity_drop_rate = 30
 var enemy_sanity_distance_trigger = 5
 var talking := false setget set_talking
+var dialog : String setget set_dialog
+var current_dialog
 
 
 onready var camera_rotator = $CameraRotator
@@ -30,16 +32,20 @@ onready var light := get_parent().find_node("DirectionalLight")
 onready var vp : Viewport = get_viewport()
 onready var vp_size : Vector2 = get_viewport().size
 onready var vp_slope : float = vp_size.y/vp_size.x 
-onready var mirror = get_parent().get_node("Mirrors").get_node("Mirror")
 onready var sm = $WorldModeSM
-onready var timer =$Timer
+onready var timer =  $Timer
+onready var respawner = get_parent().get_node("Respawner")
+onready var dialog_intro = Dialogic.start('Intro') 
+onready var dialog_respawn = Dialogic.start('Respawn') 
+onready var dialog_mirror = Dialogic.start('Mirror') 
+onready var dialog_push = Dialogic.start('Push') 
+onready var dialog_gun = Dialogic.start('Gun') 
+onready var dialog_win = Dialogic.start('Win') 
+
+
 
 func _ready() -> void:
 	add_to_group("player")
-	mirror.connect("entered", self, "_on_mirror_entered")
-	timer.stop()
-
-
 
 func _movement(delta) -> void:
 	direction.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
@@ -126,14 +132,35 @@ func _on_mirror_entered() -> void:
 func set_sanity(value) -> void:
 	sanity = value
 	if sanity == 0:
+		sanity = max_sanity
+		sm.state = sm.states.normal
+		self.global_transform.origin = respawner.global_transform.origin
 		print("you dead")
 
 func set_talking(value) -> void:
 	talking = value
 	if talking == true:
-		var new_dialog = Dialogic.start('First Dialogue') 
-		add_child(new_dialog)
-		
+		sm.state = sm.states.talk
+		add_child(current_dialog)
+	if talking == false:
+		sm.state = sm.states.idle
+
+func set_dialog(value) -> void:
+	dialog = value
+	match dialog:
+		"intro":
+			current_dialog = dialog_intro
+		"respawn":
+			current_dialog = dialog_respawn
+		"mirror":
+			current_dialog = dialog_mirror
+		"push":
+			current_dialog = dialog_push
+		"gun":
+			current_dialog = dialog_gun
+		"win":
+			current_dialog = dialog_win
+
 
 
 
