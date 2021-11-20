@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scenes/levels/Areas.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/entities/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/entities/MovableBlock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/entities/PlatformHalf.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/prefabs/fence/fence.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/entities/Bell.tscn" type="PackedScene" id=6]
@@ -65,6 +66,7 @@ environment = ExtResource( 8 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.965926, -0.198267, 0.166366, 0, 0.642788, 0.766044, -0.258819, -0.739942, 0.620885, 15.0439, 37.6386, 47.0003 )
+shadow_enabled = true
 shadow_bias = 2.127
 shadow_contact = 10.0
 directional_shadow_mode = 0
@@ -125,6 +127,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.773743, 0.641688, -0.609325
 [node name="Fences" parent="Levers_and_Doors/TopRight" index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.07618, 0, -1.64327 )
 
+[node name="fence" parent="Levers_and_Doors/TopRight/Fences" index="0"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -80.6559, 0, 157.414 )
+
 [node name="TopRight2" parent="Levers_and_Doors" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 91.0042, 0, -87.8161 )
 
@@ -134,6 +139,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.773743, 0.641688, -0.609325
 [node name="Fences" parent="Levers_and_Doors/TopRight2" index="3"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.79754, 0, 24.8428 )
 
+[node name="fence9" parent="Levers_and_Doors/TopRight2/Fences" index="8"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -153.915, 0, -86.3574 )
+
 [node name="Intersection" parent="Levers_and_Doors" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7542, 0, 45.1533 )
 
@@ -141,16 +149,22 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7542, 0, 45.1533 )
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.24566, 0, -8.58982 )
 
 [node name="BottomLeft" parent="Levers_and_Doors" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.5568, 0, 93.2084 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.0286, 0, 93.2084 )
+
+[node name="CollisionShape" parent="Levers_and_Doors/BottomLeft" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.773743, 0.641688, -0.609322 )
 
 [node name="Fences" parent="Levers_and_Doors/BottomLeft" index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.70809, -0.774654, 45.917 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23914, -0.774654, 45.917 )
 
 [node name="BottomLeft2" parent="Levers_and_Doors" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -77.123, 0, 93.0392 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -80.4673, 0, 93.0392 )
 
 [node name="Fences" parent="Levers_and_Doors/BottomLeft2" index="3"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.92903, 0, 55.3858 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.92903, 0, 55.9141 )
+
+[node name="fence9" parent="Levers_and_Doors/BottomLeft2/Fences" index="8"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 51.9711, -0.340239, 70.4813 )
 
 [node name="BottomRight" parent="Levers_and_Doors" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 131.953, 0, 122.638 )
@@ -191,13 +205,13 @@ transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -14.1992, 0, 0 )
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -15.217, 0, 0 )
 
 [node name="TopLeft2" type="Spatial" parent="Fences"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -107.444, 0, 63.6239 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -108.085, 0, 63.6239 )
 
 [node name="fence" parent="Fences/TopLeft2" instance=ExtResource( 5 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -12.0966, 0, 0 )
+transform = Transform( 0.249988, 0, 0.00248269, 0, 0.25, 0, -0.00248269, 0, 0.249988, -15.3591, -4.581, 111.067 )
 
 [node name="fence2" parent="Fences/TopLeft2" instance=ExtResource( 5 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -11.0978, 0, 0 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -14.9322, -4.581, 109.916 )
 
 [node name="fence3" parent="Fences/TopLeft2" instance=ExtResource( 5 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -10.0601, 0, 0 )
@@ -212,13 +226,13 @@ transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -7.8662, 0, 0 )
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.62305, 0, 0 )
 
 [node name="fence7" parent="Fences/TopLeft2" instance=ExtResource( 5 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -13.1188, 0, 0 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -14.5054, -4.581, 109.916 )
 
 [node name="fence8" parent="Fences/TopLeft2" instance=ExtResource( 5 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -14.1992, 0, 0 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -15.5858, -4.581, 109.916 )
 
 [node name="fence9" parent="Fences/TopLeft2" instance=ExtResource( 5 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -15.217, 0, 0 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -16.6036, -4.581, 109.916 )
 
 [node name="Middle" type="Spatial" parent="Fences"]
 
@@ -782,13 +796,13 @@ transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -11.0978, 0, 0 )
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -10.0601, 0, 0 )
 
 [node name="fence4" parent="Fences/BottomRight/BottomRight15" instance=ExtResource( 5 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -8.99165, 0, 0 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -152.309, 0, 11.8226 )
 
 [node name="fence5" parent="Fences/BottomRight/BottomRight15" instance=ExtResource( 5 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -7.8662, 0, 0 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -154.394, 0, 11.8226 )
 
 [node name="fence6" parent="Fences/BottomRight/BottomRight15" instance=ExtResource( 5 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.62305, 0, 0 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -153.151, 0, 11.8226 )
 
 [node name="fence7" parent="Fences/BottomRight/BottomRight15" instance=ExtResource( 5 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -13.1188, 0, 0 )
@@ -1199,6 +1213,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.9186, 0, -123.546 )
 [node name="Fences" parent="Bells_and_Doors/Top" index="3"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.2324, 0, -9.85993 )
 
+[node name="fence6" parent="Bells_and_Doors/Top/Fences" index="5"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -224.114, 0, 48.8714 )
+
+[node name="fence9" parent="Bells_and_Doors/Top/Fences" index="8"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -222.685, 0, 49.7058 )
+
 [node name="TopRight" parent="Bells_and_Doors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 75.6216, 0, -91.5249 )
 
@@ -1221,7 +1241,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9805, 0, 19.665 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, -23.5419, -1.90735e-06, 93.2647 )
 
 [node name="Fences" parent="Bells_and_Doors/Intersection2" index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9805, 0, 19.665 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.574, 0, 19.665 )
+
+[node name="fence5" parent="Bells_and_Doors/Intersection2/Fences" index="4"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 12.3695, 0, -27.1922 )
+
+[node name="fence6" parent="Bells_and_Doors/Intersection2/Fences" index="5"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 14.7658, 0, -20.9574 )
+
+[node name="fence9" parent="Bells_and_Doors/Intersection2/Fences" index="8"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 14.2816, -2.36932, -25.1694 )
 
 [node name="BottomRight" parent="Bells_and_Doors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 121.17, -1.90735e-06, 114.283 )
@@ -1568,19 +1597,19 @@ dialog = "gun"
 [node name="FinalDoorLevers" type="Spatial" parent="."]
 
 [node name="FinalLever" parent="FinalDoorLevers" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.571, 0, 38.2653 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.571, 0, 36.1623 )
 
 [node name="FinalLever2" parent="FinalDoorLevers" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5013, 0, 81.5625 )
 
 [node name="FinalLever3" parent="FinalDoorLevers" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.8095, 0, -121.649 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.7907, 0, -121.649 )
 
 [node name="FinalLever4" parent="FinalDoorLevers" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 89.9392, 0, -52.8483 )
 
 [node name="FinalLever5" parent="FinalDoorLevers" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 57.2888, -0.130171, 110.785 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 57.2888, 0.778322, 110.785 )
 
 [node name="FinalLever6" parent="FinalDoorLevers" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6912, -0.130171, 17.9431 )
@@ -1590,6 +1619,29 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.2863, 0, -21.3294 )
 
 [node name="Respawner" parent="." instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4641, 0, -16.9874 )
+
+[node name="MovableBoxes" type="Spatial" parent="."]
+
+[node name="MovableBlock" parent="MovableBoxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3626, 1.49794, -51.4274 )
+up_z = 0.0
+down_z = 85.0
+left_x = 0.0
+right_x = 0.0
+
+[node name="MovableBlock2" parent="MovableBoxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 66.1697, 1.49794, 115.625 )
+up_z = 0.0
+down_z = 0.0
+left_x = 20.0
+right_x = 0.0
+
+[node name="MovableBlock3" parent="MovableBoxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -110.92, 1.49794, 66.466 )
+up_z = 0.0
+down_z = 20.0
+left_x = 0.0
+right_x = 0.0
 
 [editable path="Player"]
 [editable path="Levers_and_Doors/TopRight"]
