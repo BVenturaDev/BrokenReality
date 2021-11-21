@@ -19,7 +19,6 @@ var sanity_drop_rate = 0
 var sanity_up_rate = 5
 var enemy_sanity_drop_rate = 30
 var enemy_sanity_distance_trigger = 5
-var talking := false setget set_talking
 var dialog : String setget set_dialog
 var current_dialog
 var has_attack := false
@@ -65,8 +64,6 @@ func _ready() -> void:
 	add_to_group("player")
 	music.stream = normal_song
 	music.play()
-	talking = true
-	sma.state = sma.states.talk
 	add_child(dialog_begin)
 	
 
