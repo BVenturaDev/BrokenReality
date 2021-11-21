@@ -192,6 +192,7 @@ func _on_mirror_entered() -> void:
 
 func set_sanity(value) -> void:
 	sanity = value
+	UiInfo.sanity = value
 	if sanity == 0:
 		sanity = max_sanity
 		sm.state = sm.states.normal

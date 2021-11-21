@@ -72,6 +72,10 @@ config/name="Broken Reality"
 run/main_scene="res://scenes/levels/MainLevel.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+UiInfo="*res://src/Engine/ui_info.gd"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg" )

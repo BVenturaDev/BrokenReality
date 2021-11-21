@@ -1623,7 +1623,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 57.2888, 0.778322, 110.785 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6912, -0.130171, 17.9431 )
 
 [node name="FinalDoor" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.2863, 0, -21.3294 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.3965, -7.19743, -15.0121 )
 
 [node name="Respawner" parent="." instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4641, 0, -16.9874 )
