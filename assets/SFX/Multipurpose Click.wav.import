@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Multipurpose Click.wav-274c6c502d1dba78dac9dbdb7a37c89a.sample"
+
+[deps]
+
+source_file="res://assets/SFX/Multipurpose Click.wav"
+dest_files=[ "res://.import/Multipurpose Click.wav-274c6c502d1dba78dac9dbdb7a37c89a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -16,7 +16,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if has_player == false:
 		if player in hitbox.get_overlapping_bodies():
-			emit_signal("entered")
+			player._on_mirror_entered()
 			has_player = true
 			yield(get_tree().create_timer(5), "timeout")
 			has_player = false

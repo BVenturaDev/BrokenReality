@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/levels/Areas.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/entities/Enemy.tscn" type="PackedScene" id=2]
@@ -10,7 +10,8 @@
 [ext_resource path="res://Env.tres" type="Environment" id=8]
 [ext_resource path="res://scenes/entities/FinalDoor.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/entities/FinalLever.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/ui/GameUI.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/entities/Respawner.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/entities/WinGame.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/entities/Lever.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/entities/NPC.tscn" type="PackedScene" id=15]
@@ -21,6 +22,42 @@
 _data = {
 "points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 123.264, 0, -2.82207, 0, 0, 0, 0, 0, 0, 102.729, 0, -1.87304, 0, 0, 0, 0, 0, 0, 102.657, 0, 25.7275, 0, 0, 0, 0, 0, 0, 106.305, 0, 25.898, 0, 0, 0, 0, 0, 0, 106.461, 0, 3.59436, 0, 0, 0, 0, 0, 0, 123.863, 0, 3.14827, 0, 0, 0, 0, 0, 0, 123.264, 0, -2.82207 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=2]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 20.0041, 0, 3.22569, 0, 0, 0, 0, 0, 0, 19.9311, 0, -45.2716, 0, 0, 0, 0, 0, 0, -20.2605, 0, -45.3769, 0, 0, 0, 0, 0, 0, -20.7887, 0, 2.22986, 0, 0, 0, 0, 0, 0, 20.0041, 0, 3.22569 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=3]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 14.779, 0, 13.9269, 0, 0, 0, 0, 0, 0, 15.2698, 0, -4.2059, 0, 0, 0, 0, 0, 0, 1.52685, 0, -4.07505, 0, 0, 0, 0, 0, 0, 0.554634, 0, 27.0305, 0, 0, 0, 0, 0, 0, -14.0819, 0, 26.6721, 0, 0, 0, 0, 0, 0, -14.2185, 0, 30.1928, 0, 0, 0, 0, 0, 0, 4.90158, 0, 30.1345, 0, 0, 0, 0, 0, 0, 4.82629, 0, 0.643379, 0, 0, 0, 0, 0, 0, 9.86687, 0, 0.693787, 0, 0, 0, 0, 0, 0, 9.48383, 0, 14.3621, 0, 0, 0, 0, 0, 0, 14.779, 0, 13.9269 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=4]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 20.8753, 0, -0.180893, 0, 0, 0, 0, 0, 0, -25.9517, 0, -0.138649, 0, 0, 0, 0, 0, 0, -25.7195, 0, 4.72807, 0, 0, 0, 0, 0, 0, 0.389214, 0, 5.16129, 0, 0, 0, 0, 0, 0, 0.195236, 0, 41.0215, 0, 0, 0, 0, 0, 0, 3.96829, 0, 41.3069, 0, 0, 0, 0, 0, 0, 3.95395, 0, 5.56101, 0, 0, 0, 0, 0, 0, 20.8136, 0, 5.09318, 0, 0, 0, 0, 0, 0, 20.8753, 0, -0.180893 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=5]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 15.8839, 0, -1.64583, 0, 0, 0, 0, 0, 0, -1.34782, 0, -2.2068, 0, 0, 0, 0, 0, 0, -2.12624, 0, 21.3033, 0, 0, 0, 0, 0, 0, -28.7889, 0, 20.6259, 0, 0, 0, 0, 0, 0, -28.7136, 0, 25.4537, 0, 0, 0, 0, 0, 0, 0.28846, 0, 25.9908, 0, 0, 0, 0, 0, 0, 0.693192, 0, 3.05647, 0, 0, 0, 0, 0, 0, 15.7212, 0, 2.83862, 0, 0, 0, 0, 0, 0, 15.8839, 0, -1.64583 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=6]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 90.9519, 0, -56.1034, 0, 0, 0, 0, 0, 0, 10.3716, 0, -22.2713, 0, 0, 0, 0, 0, 0, -12.3681, 0, -22.892, 0, 0, 0, 0, 0, 0, -12.1672, 0, -6.16064, 0, 0, 0, 0, 0, 0, 0.0164337, 0, -5.04022, 0, 0, 0, 0, 0, 0, 0.212944, 0, 14.5348, 0, 0, 0, 0, 0, 0, 15.882, 0, 16.1208, 0, 0, 0, 0, 0, 0, 16.2306, 0, 8.40389, 0, 0, 0, 0, 0, 0, 5.87125, 0, 7.63429, 0, 0, 0, 0, 0, 0, 5.79409, 0, -12.886, 0, 0, 0, 0, 0, 0, -5.13852, 0, -12.3785, 0, 0, 0, 0, 0, 0, -5.11775, 0, -18.6403, 0, 0, 0, 0, 0, 0, 10.369, 0, -18.6354 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=7]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0.363182, 0, 0.402809, 0, 0, 0, 0, 0, 0, -0.00981903, 0, 17.2605, 0, 0, 0, 0, 0, 0, 4.02566, 0, 17.7578, 0, 0, 0, 0, 0, 0, 4.01955, 0, 0.444099, 0, 0, 0, 0, 0, 0, 0.363182, 0, 0.402809 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0 )
 }
 
 [node name="main_map" type="Spatial"]
@@ -44,10 +81,13 @@ directional_shadow_bias_split_scale = 0.241
 [node name="Areas" parent="." instance=ExtResource( 1 )]
 
 [node name="Player" parent="." instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54598, 0, 0.368714 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.7478, 0, 0.368714 )
 
 [node name="Camera" parent="Player/CameraRotator" index="0"]
 size = 16.0
+
+[node name="Sprite" parent="Player" index="7"]
+frame = 3
 
 [node name="Mirrors" type="Spatial" parent="."]
 
@@ -69,18 +109,22 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.2888, 0, -77.5942 )
 [node name="Boxes" type="Spatial" parent="."]
 
 [node name="Box" parent="Boxes" instance=ExtResource( 17 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -5.12913, 0, 1 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 64.7874, 0, 1 )
+has_coin = false
 
 [node name="Box2" parent="Boxes" instance=ExtResource( 17 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -5.12913, 0, -1.83219 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 64.7874, 0, -1.83219 )
+has_coin = false
+
+[node name="Box3" parent="Boxes" instance=ExtResource( 17 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.64465, 0, 1 )
+has_coin = false
+
+[node name="Box4" parent="Boxes" instance=ExtResource( 17 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.64465, 0, -1.83219 )
+has_coin = false
 
 [node name="Levers_and_Doors" type="Spatial" parent="."]
-
-[node name="Intro" parent="Levers_and_Doors" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59.1376, 0, 10.1375 )
-
-[node name="Fences" parent="Levers_and_Doors/Intro" index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5201, 0, -16.5837 )
 
 [node name="TopRight" parent="Levers_and_Doors" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 91.0042, 0, -62.359 )
@@ -91,6 +135,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.773743, 0.641688, -0.609325
 [node name="Fences" parent="Levers_and_Doors/TopRight" index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.07618, 0, -1.64327 )
 
+[node name="fence" parent="Levers_and_Doors/TopRight/Fences" index="0"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -80.6559, 0, 157.414 )
+
 [node name="TopRight2" parent="Levers_and_Doors" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 91.0042, 0, -87.8161 )
 
@@ -100,11 +147,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.773743, 0.641688, -0.609325
 [node name="Fences" parent="Levers_and_Doors/TopRight2" index="3"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.79754, 0, 24.8428 )
 
-[node name="Intro2" parent="Levers_and_Doors" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59.1376, 0, 12.0097 )
-
-[node name="Fences" parent="Levers_and_Doors/Intro2" index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.46491, 0, -6.08159 )
+[node name="fence9" parent="Levers_and_Doors/TopRight2/Fences" index="8"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -153.915, 0, -86.3574 )
 
 [node name="Intersection" parent="Levers_and_Doors" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7542, 0, 45.1533 )
@@ -113,16 +157,22 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7542, 0, 45.1533 )
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.24566, 0, -8.58982 )
 
 [node name="BottomLeft" parent="Levers_and_Doors" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.5568, 0, 93.2084 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.0286, 0, 93.2084 )
+
+[node name="CollisionShape" parent="Levers_and_Doors/BottomLeft" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.773743, 0.641688, -0.609322 )
 
 [node name="Fences" parent="Levers_and_Doors/BottomLeft" index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.70809, -0.774654, 45.917 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23914, -0.774654, 45.917 )
 
 [node name="BottomLeft2" parent="Levers_and_Doors" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -77.123, 0, 93.0392 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -80.4673, 0, 93.0392 )
 
 [node name="Fences" parent="Levers_and_Doors/BottomLeft2" index="3"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.92903, 0, 55.3858 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.92903, 0, 55.9141 )
+
+[node name="fence9" parent="Levers_and_Doors/BottomLeft2/Fences" index="8"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 51.9711, -0.340239, 70.4813 )
 
 [node name="BottomRight" parent="Levers_and_Doors" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 131.953, 0, 122.638 )
@@ -163,13 +213,13 @@ transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -14.1992, 0, 0 )
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -15.217, 0, 0 )
 
 [node name="TopLeft2" type="Spatial" parent="Fences"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -107.444, 0, 63.6239 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -108.085, 0, 63.6239 )
 
 [node name="fence" parent="Fences/TopLeft2" instance=ExtResource( 5 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -12.0966, 0, 0 )
+transform = Transform( 0.249988, 0, 0.00248269, 0, 0.25, 0, -0.00248269, 0, 0.249988, -15.3591, -4.581, 111.067 )
 
 [node name="fence2" parent="Fences/TopLeft2" instance=ExtResource( 5 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -11.0978, 0, 0 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -14.9322, -4.581, 109.916 )
 
 [node name="fence3" parent="Fences/TopLeft2" instance=ExtResource( 5 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -10.0601, 0, 0 )
@@ -184,13 +234,13 @@ transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -7.8662, 0, 0 )
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.62305, 0, 0 )
 
 [node name="fence7" parent="Fences/TopLeft2" instance=ExtResource( 5 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -13.1188, 0, 0 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -14.5054, -4.581, 109.916 )
 
 [node name="fence8" parent="Fences/TopLeft2" instance=ExtResource( 5 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -14.1992, 0, 0 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -15.5858, -4.581, 109.916 )
 
 [node name="fence9" parent="Fences/TopLeft2" instance=ExtResource( 5 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -15.217, 0, 0 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -16.6036, -4.581, 109.916 )
 
 [node name="Middle" type="Spatial" parent="Fences"]
 
@@ -754,13 +804,13 @@ transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -11.0978, 0, 0 )
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -10.0601, 0, 0 )
 
 [node name="fence4" parent="Fences/BottomRight/BottomRight15" instance=ExtResource( 5 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -8.99165, 0, 0 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -152.309, 0, 11.8226 )
 
 [node name="fence5" parent="Fences/BottomRight/BottomRight15" instance=ExtResource( 5 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -7.8662, 0, 0 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -154.394, 0, 11.8226 )
 
 [node name="fence6" parent="Fences/BottomRight/BottomRight15" instance=ExtResource( 5 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.62305, 0, 0 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -153.151, 0, 11.8226 )
 
 [node name="fence7" parent="Fences/BottomRight/BottomRight15" instance=ExtResource( 5 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -13.1188, 0, 0 )
@@ -1171,6 +1221,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.9186, 0, -123.546 )
 [node name="Fences" parent="Bells_and_Doors/Top" index="3"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.2324, 0, -9.85993 )
 
+[node name="fence6" parent="Bells_and_Doors/Top/Fences" index="5"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -224.114, 0, 48.8714 )
+
+[node name="fence9" parent="Bells_and_Doors/Top/Fences" index="8"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -222.685, 0, 49.7058 )
+
 [node name="TopRight" parent="Bells_and_Doors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 75.6216, 0, -91.5249 )
 
@@ -1193,7 +1249,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9805, 0, 19.665 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, -23.5419, -1.90735e-06, 93.2647 )
 
 [node name="Fences" parent="Bells_and_Doors/Intersection2" index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9805, 0, 19.665 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.574, 0, 19.665 )
+
+[node name="fence5" parent="Bells_and_Doors/Intersection2/Fences" index="4"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 12.3695, 0, -27.1922 )
+
+[node name="fence6" parent="Bells_and_Doors/Intersection2/Fences" index="5"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 14.7658, 0, -20.9574 )
+
+[node name="fence9" parent="Bells_and_Doors/Intersection2/Fences" index="8"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 14.2816, -2.36932, -25.1694 )
 
 [node name="BottomRight" parent="Bells_and_Doors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 121.17, -1.90735e-06, 114.283 )
@@ -1392,36 +1457,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 128.97, 1.49794, 93.2158 )
 [node name="BottomRight8" parent="Platforms" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 125.842, 1.49794, 93.2158 )
 
-[node name="Movable_Blocks" type="Spatial" parent="."]
-
-[node name="TopLeft" parent="Movable_Blocks" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3218, 1.88015, -51.3258 )
-up_z = 0.0
-down_z = 5.0
-left_x = 0.0
-right_x = 0.0
-
-[node name="TopLeft2" parent="Movable_Blocks" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.5312, 1.88015, -61.5666 )
-up_z = 0.0
-down_z = 70.0
-left_x = 0.0
-right_x = 0.0
-
-[node name="BottomLeft" parent="Movable_Blocks" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -110.936, 1.88015, 66.6907 )
-up_z = 0.0
-down_z = 5.0
-left_x = 0.0
-right_x = 0.0
-
-[node name="BottomRight" parent="Movable_Blocks" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 75.634, 1.88, 115.896 )
-up_z = 0.0
-down_z = 0.0
-left_x = 15.0
-right_x = 0.0
-
 [node name="Enemies" type="Spatial" parent="."]
 
 [node name="Intro" type="Spatial" parent="Enemies"]
@@ -1431,8 +1466,116 @@ curve = SubResource( 1 )
 
 [node name="PathFollow" type="PathFollow" parent="Enemies/Intro/Path"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 123.264, 0, -2.82207 )
+rotation_mode = 0
 
 [node name="Enemy" parent="Enemies/Intro/Path/PathFollow" instance=ExtResource( 2 )]
+
+[node name="TopLeft" type="Spatial" parent="Enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4079, 0, -101.42 )
+
+[node name="Path" type="Path" parent="Enemies/TopLeft"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+curve = SubResource( 2 )
+
+[node name="PathFollow" type="PathFollow" parent="Enemies/TopLeft/Path"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0041, 0, 3.22569 )
+rotation_mode = 0
+
+[node name="Enemy" parent="Enemies/TopLeft/Path/PathFollow" instance=ExtResource( 2 )]
+
+[node name="TopRight" type="Spatial" parent="Enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 76.9773, 0, -80.0319 )
+
+[node name="Path" type="Path" parent="Enemies/TopRight"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+curve = SubResource( 3 )
+
+[node name="PathFollow" type="PathFollow" parent="Enemies/TopRight/Path"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.779, 0, 13.9269 )
+rotation_mode = 0
+
+[node name="Enemy" parent="Enemies/TopRight/Path/PathFollow" instance=ExtResource( 2 )]
+
+[node name="BottomLeft" type="Spatial" parent="Enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.5365, 0, 66.7605 )
+
+[node name="Path" type="Path" parent="Enemies/BottomLeft"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+curve = SubResource( 4 )
+
+[node name="PathFollow" type="PathFollow" parent="Enemies/BottomLeft/Path"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8753, 0, -0.180893 )
+rotation_mode = 0
+
+[node name="Enemy" parent="Enemies/BottomLeft/Path/PathFollow" instance=ExtResource( 2 )]
+
+[node name="BottomLeft1" type="Spatial" parent="Enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -70.1841, 2.89802, 92.2597 )
+
+[node name="Path" type="Path" parent="Enemies/BottomLeft1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+curve = SubResource( 5 )
+
+[node name="PathFollow" type="PathFollow" parent="Enemies/BottomLeft1/Path"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8839, 0, -1.64583 )
+rotation_mode = 0
+
+[node name="Enemy" parent="Enemies/BottomLeft1/Path/PathFollow" instance=ExtResource( 2 )]
+
+[node name="BotttomRight" type="Spatial" parent="Enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.4243, 0, 91.5312 )
+
+[node name="Path" type="Path" parent="Enemies/BotttomRight"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+curve = SubResource( 6 )
+
+[node name="PathFollow" type="PathFollow" parent="Enemies/BotttomRight/Path"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 90.9519, 0, -56.1034 )
+rotation_mode = 0
+
+[node name="Enemy" parent="Enemies/BotttomRight/Path/PathFollow" instance=ExtResource( 2 )]
+
+[node name="BotttomRight2" type="Spatial" parent="Enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 123.199, 0, 67.5934 )
+
+[node name="Path" type="Path" parent="Enemies/BotttomRight2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+curve = SubResource( 7 )
+
+[node name="PathFollow" type="PathFollow" parent="Enemies/BotttomRight2/Path"]
+transform = Transform( 0.96016, 0, 0.279451, 0, 1, 0, -0.279451, 0, 0.96016, 4.02642, 0, 0.686929 )
+offset = 37.8735
+rotation_mode = 0
+
+[node name="Enemy" parent="Enemies/BotttomRight2/Path/PathFollow" instance=ExtResource( 2 )]
+
+[node name="BotttomRight3" type="Spatial" parent="Enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 130.557, 0, 67.5934 )
+
+[node name="Path" type="Path" parent="Enemies/BotttomRight3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+curve = SubResource( 7 )
+
+[node name="PathFollow" type="PathFollow" parent="Enemies/BotttomRight3/Path"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.152535, 0, 9.92295 )
+offset = 9.5278
+rotation_mode = 0
+
+[node name="Enemy" parent="Enemies/BotttomRight3/Path/PathFollow" instance=ExtResource( 2 )]
+
+[node name="BotttomRight4" type="Spatial" parent="Enemies"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 137.124, 0, 67.5934 )
+
+[node name="Path" type="Path" parent="Enemies/BotttomRight4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+curve = SubResource( 7 )
+
+[node name="PathFollow" type="PathFollow" parent="Enemies/BotttomRight4/Path"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.61118, 0, 17.7067 )
+offset = 20.4691
+rotation_mode = 0
+
+[node name="Enemy" parent="Enemies/BotttomRight4/Path/PathFollow" instance=ExtResource( 2 )]
 
 [node name="NPCs" type="Spatial" parent="."]
 
@@ -1441,49 +1584,79 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.2804, 0.931666, -12.2769 )
 
 [node name="NPC6" parent="NPCs" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.786, 0.931666, -73.934 )
+dialog = "mirror"
 
 [node name="NPC2" parent="NPCs" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0846, 0.931666, -20.5482 )
+dialog = "mirror"
 
 [node name="NPC3" parent="NPCs" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.1413, 0.931666, 7.07961 )
+dialog = "win"
 
 [node name="NPC4" parent="NPCs" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111.143, 0.931666, 48.8273 )
+dialog = "push"
 
 [node name="NPC5" parent="NPCs" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 131.916, 0.931666, 117.489 )
+dialog = "gun"
 
 [node name="FinalDoorLevers" type="Spatial" parent="."]
 
 [node name="FinalLever" parent="FinalDoorLevers" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.571, 0, 38.2653 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.571, 0, 36.1623 )
 
 [node name="FinalLever2" parent="FinalDoorLevers" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5013, 0, 81.5625 )
 
 [node name="FinalLever3" parent="FinalDoorLevers" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.8095, 0, -121.649 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.7907, 0, -121.649 )
 
 [node name="FinalLever4" parent="FinalDoorLevers" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 89.9392, 0, -52.8483 )
 
 [node name="FinalLever5" parent="FinalDoorLevers" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 57.2888, -0.130171, 110.785 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 57.2888, 0.778322, 110.785 )
 
 [node name="FinalLever6" parent="FinalDoorLevers" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6912, -0.130171, 17.9431 )
 
 [node name="FinalDoor" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.2863, 0, -21.3294 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.3965, -7.19743, -15.0121 )
 
-[node name="GameUI" parent="." instance=ExtResource( 11 )]
+[node name="Respawner" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4641, 0, -16.9874 )
+
+[node name="MovableBoxes" type="Spatial" parent="."]
+
+[node name="MovableBlock" parent="MovableBoxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3626, 1.49794, -51.4274 )
+up_z = 0.0
+down_z = 85.0
+left_x = 0.0
+right_x = 0.0
+
+[node name="MovableBlock2" parent="MovableBoxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 66.1697, 1.49794, 115.625 )
+up_z = 0.0
+down_z = 0.0
+left_x = 20.0
+right_x = 0.0
+
+[node name="MovableBlock3" parent="MovableBoxes" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -110.92, 1.49794, 66.466 )
+up_z = 0.0
+down_z = 20.0
+left_x = 0.0
+right_x = 0.0
+
+[node name="WinGame" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.2047, 0, -24.3115 )
 
 [editable path="Player"]
-[editable path="Levers_and_Doors/Intro"]
 [editable path="Levers_and_Doors/TopRight"]
 [editable path="Levers_and_Doors/TopRight2"]
-[editable path="Levers_and_Doors/Intro2"]
 [editable path="Levers_and_Doors/Intersection"]
 [editable path="Levers_and_Doors/BottomLeft"]
 [editable path="Levers_and_Doors/BottomLeft2"]
@@ -1495,3 +1668,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.2863, 0, -21.3294 )
 [editable path="Bells_and_Doors/Intersection2"]
 [editable path="Bells_and_Doors/BottomRight"]
 [editable path="Bells_and_Doors/BottomRight2"]
+[editable path="WinGame"]

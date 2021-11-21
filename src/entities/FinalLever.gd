@@ -11,6 +11,7 @@ func _init() -> void:
 
 func hitted() -> void:
 	if !hitted:
+		UiInfo.levers += 1
 		sprite.play("hitted")
 		final_door.final_countdown += 1
 		hitted == true
