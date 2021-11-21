@@ -1,12 +1,14 @@
 extends Control
 
-onready var progress = $ProgressBar
+onready var hp = $ProgressBar
 onready var levers = $HBoxContainer/Label
 onready var pause = $Pause
 onready var options = $MarginContainer
 
+
 func _process(delta):
-	pass
+	levers.text = str(UiInfo.levers)
+	hp.value = UiInfo.sanity
 
 func _switch_pause():
 	if not get_tree().paused:

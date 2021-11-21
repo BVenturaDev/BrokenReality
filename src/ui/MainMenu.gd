@@ -3,7 +3,6 @@ extends Control
 var level = preload("res://scenes/levels/MainLevel.tscn")
 
 onready var options = $MarginContainer
-
 func _on_PlayButton_pressed():
 	get_tree().change_scene_to(level)
 
