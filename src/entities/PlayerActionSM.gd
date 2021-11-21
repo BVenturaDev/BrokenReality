@@ -37,7 +37,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _state_logic(delta):
 	if [states.idle, states.walk].has(state):
-		if Input.is_action_pressed("right_click") and parent.timer.is_stopped() and parent.has_gun :
+		if Input.is_action_pressed("right_click") and parent.timer.is_stopped():
 			parent.aim.visible = true
 			parent._aim()
 	
