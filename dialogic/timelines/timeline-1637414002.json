@@ -15,10 +15,30 @@
 			}
 		},
 		{
+			"action": "join",
+			"character": "character-1637111697.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
 			"character": "character-1637111920.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hello There!"
+			"text": "Wonderful.. Your body is strong.\nWe shall help you move along."
+		},
+		{
+			"character": "character-1637111920.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "If you should fall, do not fear.\nYour mind and body shall return here."
 		},
 		{
 			"event_id": "dialogic_022",

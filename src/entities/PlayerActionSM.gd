@@ -67,6 +67,20 @@ func _get_transition(delta):
 		states.jump:
 			if parent.is_on_floor():
 				return states.idle
+		states.walk_up:
+			if !parent.is_on_floor():
+				return states.jump
+			elif parent.velocity.z > 0:
+				return states.walk_down
+			elif parent.velocity.x != 0:
+				return states.walk
+		states.walk_down:
+			if !parent.is_on_floor():
+				return states.jump
+			elif parent.velocity.z < 0:
+				return states.walk_up
+			elif parent.velocity.x != 0:
+				return states.walk
 	return null
 
 func _enter_state(new_state, old_state):

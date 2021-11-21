@@ -18,7 +18,7 @@
 			"character": "character-1637111920.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hello There! You seem lost my dear... thing... stuff...?"
+			"text": "Ah.. So another has received his call."
 		},
 		{
 			"action": "join",
@@ -35,28 +35,44 @@
 			}
 		},
 		{
-			"character": "character-1637111697.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "What is this... where am I...?"
+			"event_id": "dialogic_022",
+			"transition_duration": 1
 		},
 		{
 			"character": "character-1637111920.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hmm...seems to me you should know the awnser to that...\nAnd taking a closer look at you, you appear to be human. \nAt least sufficiently..."
-		},
-		{
-			"character": "character-1637111697.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Human?... yes... I think I am."
+			"text": "Please, make your way to the end, that is all."
 		},
 		{
 			"character": "character-1637111920.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Perfect! here have this.\n* Hands Sword\n Humans like to kill other stuff with it. "
+			"text": "There he awaits, his slumber deep."
+		},
+		{
+			"character": "character-1637111920.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You are within the chapel, of his keep."
+		},
+		{
+			"character": "character-1637111920.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Strong and clever, you'll find your way.\nWe simply ask, that you do not stray."
+		},
+		{
+			"character": "character-1637111920.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Your blade I return, your path awaits.\nWith it you may only destroy small crates."
+		},
+		{
+			"character": "character-1637111920.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "(Left mouse button to attack.)"
 		},
 		{
 			"event_id": "dialogic_022",

@@ -13,8 +13,8 @@
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://addons/dialogic/Example Assets/portraits/df-1.png"
+			"path": "res://assets/sprites/New_Assets/npc1.png"
 		}
 	],
-	"scale": 100
+	"scale": 200
 }

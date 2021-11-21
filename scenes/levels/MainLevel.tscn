@@ -90,7 +90,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.7478, 0, 0.368714 )
 size = 16.0
 
 [node name="Sprite" parent="Player" index="7"]
-frame = 3
+frame = 2
 
 [node name="Mirrors" type="Spatial" parent="."]
 
