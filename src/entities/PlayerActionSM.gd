@@ -13,7 +13,7 @@ func _ready() -> void:
 	call_deferred("set_state", states.idle)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if [states.idle, states.walk, states.run].has(state):
+	if [states.idle, states.walk].has(state):
 		if Input.is_action_just_pressed("left_click") and parent.has_attack:
 			parent._attack()
 			state = states.attack
@@ -37,7 +37,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_tree().set_input_as_handled()
 
 func _state_logic(delta):
-	if [states.idle, states.walk, states.run].has(state):
+	if [states.idle, states.walk].has(state):
 		if Input.is_action_pressed("right_click") and parent.timer.is_stopped() and parent.has_gun :
 			parent.aim.visible = true
 			parent._aim()
@@ -67,6 +67,20 @@ func _get_transition(delta):
 		states.jump:
 			if parent.is_on_floor():
 				return states.idle
+		states.walk_up:
+			if !parent.is_on_floor():
+				return states.jump
+			elif parent.velocity.z > 0:
+				return states.walk_down
+			elif parent.velocity.x != 0:
+				return states.walk
+		states.walk_down:
+			if !parent.is_on_floor():
+				return states.jump
+			elif parent.velocity.z < 0:
+				return states.walk_up
+			elif parent.velocity.x != 0:
+				return states.walk
 	return null
 
 func _enter_state(new_state, old_state):

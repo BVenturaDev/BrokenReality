@@ -37,9 +37,10 @@ animations = [ {
 [node name="Respawner" type="Spatial"]
 
 [node name="Sprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform( 2, 0, 0, 0, -8.74228e-08, 1, 0, -2, -4.37114e-08, 0, 0.0718474, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.0718474, 0 )
+pixel_size = 0.1
 shaded = true
 alpha_cut = 2
 frames = SubResource( 7 )
-frame = 1
+frame = 4
 playing = true
