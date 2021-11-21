@@ -7,7 +7,7 @@
 			"mirror": false,
 			"portrait": "",
 			"position": {
-				"0": false,
+				"0": true,
 				"1": false,
 				"2": false,
 				"3": false,
@@ -15,10 +15,36 @@
 			}
 		},
 		{
+			"action": "join",
+			"character": "character-1637111697.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
 			"character": "character-1637111920.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hello There!"
+			"text": "Your gun I return, you've done so well.\nWith this gift, you may ring each bell."
+		},
+		{
+			"character": "character-1637111920.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Each toll of the bell, shall open the gates.\nThen move ahead, the great dreamer awaits."
+		},
+		{
+			"character": "character-1637111920.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "(Right mouse button to shoot.)"
 		},
 		{
 			"event_id": "dialogic_022",

@@ -15,10 +15,30 @@
 			}
 		},
 		{
+			"action": "join",
+			"character": "character-1637111697.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
 			"character": "character-1637111920.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hello There!"
+			"text": "You wish to escape.. To run astray.\nWhatever your wish, right this way."
+		},
+		{
+			"character": "character-1637111920.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "All can be given, simply open this gate.\nFind all 5 levers, do not.. Make him wait."
 		},
 		{
 			"event_id": "dialogic_022",

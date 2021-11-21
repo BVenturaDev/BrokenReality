@@ -39,12 +39,14 @@ onready var sm = $WorldModeSM
 onready var sma = $PlayerActionSM
 onready var timer =  $Timer
 onready var respawner = get_parent().get_node("Respawner")
-onready var dialog_intro = Dialogic.start('Intro') 
-onready var dialog_respawn = Dialogic.start('Respawn') 
-onready var dialog_mirror = Dialogic.start('Mirror') 
-onready var dialog_push = Dialogic.start('Push') 
-onready var dialog_gun = Dialogic.start('Gun') 
-onready var dialog_win = Dialogic.start('Win') 
+onready var dialog_intro = Dialogic.start("Intro") 
+onready var dialog_respawn = Dialogic.start("Respawn") 
+onready var dialog_mirror = Dialogic.start("Mirror") 
+onready var dialog_push = Dialogic.start("Push") 
+onready var dialog_gun = Dialogic.start("Gun") 
+onready var dialog_win = Dialogic.start("Win") 
+onready var dialog_after_win = Dialogic.start("AfterWin") 
+onready var dialog_begin = Dialogic.start("Begin") 
 onready var music = $Music
 onready var sfx = $SFX
 onready var normal_song : AudioStreamSample = preload("res://assets/Music/Noir.wav")
@@ -63,6 +65,10 @@ func _ready() -> void:
 	add_to_group("player")
 	music.stream = normal_song
 	music.play()
+	talking = true
+	sma.state = sma.states.talk
+	add_child(dialog_begin)
+	
 
 func _movement(delta) -> void:
 	direction.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")

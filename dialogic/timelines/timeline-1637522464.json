@@ -2,7 +2,7 @@
 	"events": [
 		{
 			"action": "join",
-			"character": "character-1637111920.json",
+			"character": "character-1637111697.json",
 			"event_id": "dialogic_002",
 			"mirror": false,
 			"portrait": "",
@@ -15,34 +15,28 @@
 			}
 		},
 		{
-			"action": "join",
 			"character": "character-1637111697.json",
-			"event_id": "dialogic_002",
-			"mirror": false,
-			"portrait": "",
-			"position": {
-				"0": false,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": true
-			}
-		},
-		{
-			"character": "character-1637111920.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Within his reflection, you will see so much more.\nThough your mortal mind, may not endure..."
+			"text": "What..? Where am I? What is this place?"
 		},
 		{
-			"character": "character-1637111920.json",
+			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Frail is your mind, rely on your sight.\nLook for the gifts, of floating light."
+			"text": "*Checks pockets* Was I mugged!?"
 		},
 		{
-			"event_id": "dialogic_022",
-			"transition_duration": 1
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "The last thing I can remember... Is that bar. I just finished my last job."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "And that woman.. With those strange yellow eyes. And that eerie smile.."
 		},
 		{
 			"call_node": {
@@ -57,7 +51,7 @@
 	],
 	"metadata": {
 		"dialogic-version": "1.4 - DEV",
-		"file": "timeline-1637414011.json",
-		"name": "Mirror"
+		"file": "timeline-1637522464.json",
+		"name": "Begin"
 	}
 }
