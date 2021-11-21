@@ -13,13 +13,13 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if [states.idle, states.walk].has(state):
-		if Input.is_action_just_pressed("left_click") and parent.has_attack:
+		if Input.is_action_just_pressed("left_click"):
 			parent._attack()
 			state = states.attack
 			yield(get_tree().create_timer(0.5), "timeout")
 			state = states.idle
 			get_tree().set_input_as_handled()
-		if Input.is_action_just_released("right_click") and parent.timer.is_stopped() and parent.has_gun:
+		if Input.is_action_just_released("right_click") and parent.timer.is_stopped():
 			parent.aim.visible = false
 			parent._shoot()
 			parent.timer.start()

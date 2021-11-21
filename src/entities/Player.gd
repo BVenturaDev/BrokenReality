@@ -20,9 +20,6 @@ var sanity_up_rate = 5
 var enemy_sanity_drop_rate = 30
 var enemy_sanity_distance_trigger = 5
 var current_dialog
-var has_attack := true
-var has_push := true
-var has_gun := true
 
 
 onready var camera_rotator = $CameraRotator
