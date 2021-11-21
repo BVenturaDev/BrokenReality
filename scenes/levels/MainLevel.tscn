@@ -89,9 +89,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.7478, 0, 0.368714 )
 [node name="Camera" parent="Player/CameraRotator" index="0"]
 size = 16.0
 
-[node name="Sprite" parent="Player" index="7"]
-frame = 2
-
 [node name="Mirrors" type="Spatial" parent="."]
 
 [node name="Mirror" parent="Mirrors" instance=ExtResource( 16 )]
