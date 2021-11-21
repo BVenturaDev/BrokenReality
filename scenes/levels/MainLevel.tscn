@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/levels/Areas.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/entities/Enemy.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://scenes/entities/FinalDoor.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/entities/FinalLever.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/entities/Respawner.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/entities/WinGame.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/entities/Lever.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/entities/NPC.tscn" type="PackedScene" id=15]
@@ -84,6 +85,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.7478, 0, 0.368714 )
 
 [node name="Camera" parent="Player/CameraRotator" index="0"]
 size = 16.0
+
+[node name="Sprite" parent="Player" index="7"]
+frame = 2
 
 [node name="Mirrors" type="Spatial" parent="."]
 
@@ -1647,6 +1651,9 @@ down_z = 20.0
 left_x = 0.0
 right_x = 0.0
 
+[node name="WinGame" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.2047, 0, -24.3115 )
+
 [editable path="Player"]
 [editable path="Levers_and_Doors/TopRight"]
 [editable path="Levers_and_Doors/TopRight2"]
@@ -1661,3 +1668,4 @@ right_x = 0.0
 [editable path="Bells_and_Doors/Intersection2"]
 [editable path="Bells_and_Doors/BottomRight"]
 [editable path="Bells_and_Doors/BottomRight2"]
+[editable path="WinGame"]
