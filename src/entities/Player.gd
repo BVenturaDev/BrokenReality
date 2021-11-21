@@ -19,8 +19,6 @@ var sanity_drop_rate = 0
 var sanity_up_rate = 5
 var enemy_sanity_drop_rate = 30
 var enemy_sanity_distance_trigger = 5
-var talking := false setget set_talking
-var dialog : String setget set_dialog
 var current_dialog
 var has_attack := false
 var has_push := false
@@ -39,12 +37,6 @@ onready var sm = $WorldModeSM
 onready var sma = $PlayerActionSM
 onready var timer =  $Timer
 onready var respawner = get_parent().get_node("Respawner")
-onready var dialog_intro = Dialogic.start("Intro") 
-onready var dialog_respawn = Dialogic.start("Respawn") 
-onready var dialog_mirror = Dialogic.start("Mirror") 
-onready var dialog_push = Dialogic.start("Push") 
-onready var dialog_gun = Dialogic.start("Gun") 
-onready var dialog_win = Dialogic.start("Win") 
 onready var dialog_after_win = Dialogic.start("AfterWin") 
 onready var dialog_begin = Dialogic.start("Begin") 
 onready var music = $Music
@@ -65,7 +57,6 @@ func _ready() -> void:
 	add_to_group("player")
 	music.stream = normal_song
 	music.play()
-	talking = true
 	sma.state = sma.states.talk
 	add_child(dialog_begin)
 	
@@ -204,25 +195,6 @@ func set_sanity(value) -> void:
 		sm.state = sm.states.normal
 		self.global_transform.origin = respawner.global_transform.origin
 		print("you dead")
-
-func set_dialog(value) -> void:
-	dialog = value
-	match dialog:
-		"intro":
-			current_dialog = dialog_intro
-			has_attack = true
-		"respawn":
-			current_dialog = dialog_respawn
-		"mirror":
-			current_dialog = dialog_mirror
-		"push":
-			current_dialog = dialog_push
-			has_push = true
-		"gun":
-			current_dialog = dialog_gun
-			has_gun = true
-		"win":
-			current_dialog = dialog_win
 
 
 

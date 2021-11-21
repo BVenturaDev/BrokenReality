@@ -43,16 +43,6 @@
 		{
 			"event_id": "dialogic_022",
 			"transition_duration": 1
-		},
-		{
-			"call_node": {
-				"arguments": [
-					"false"
-				],
-				"method_name": "set_talking",
-				"target_node_path": "\"res://scenes/entities/Player.tscn\""
-			},
-			"event_id": "dialogic_042"
 		}
 	],
 	"metadata": {

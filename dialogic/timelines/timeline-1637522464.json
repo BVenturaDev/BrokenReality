@@ -37,16 +37,6 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "And that woman.. With those strange yellow eyes. And that eerie smile.."
-		},
-		{
-			"call_node": {
-				"arguments": [
-					"false"
-				],
-				"method_name": "set_talking",
-				"target_node_path": "\"res://scenes/entities/Player.tscn\""
-			},
-			"event_id": "dialogic_042"
 		}
 	],
 	"metadata": {
