@@ -22,12 +22,8 @@ func _get_transition(delta):
 		states.normal:
 			if player.state == states.inverted:
 				return states.inverted
-			if Input.is_action_just_pressed("ui_accept"):
-				return states.inverted
 		states.inverted:
 			if player.state == states.normal:
-				return states.normal
-			if Input.is_action_just_pressed("ui_accept"):
 				return states.normal
 	return null
 

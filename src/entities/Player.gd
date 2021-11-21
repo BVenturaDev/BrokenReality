@@ -205,14 +205,6 @@ func set_sanity(value) -> void:
 		self.global_transform.origin = respawner.global_transform.origin
 		print("you dead")
 
-func set_talking(value) -> void:
-	talking = value
-	if talking == true:
-		sma.state = sma.states.talk
-		add_child(current_dialog)
-	if talking == false:
-		sma.state = sma.states.idle
-
 func set_dialog(value) -> void:
 	dialog = value
 	match dialog:

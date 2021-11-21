@@ -9,7 +9,6 @@ func _ready() -> void:
 	add_state("jump")
 	add_state("attack")
 	add_state("shoot")
-	add_state("talk")
 	call_deferred("set_state", states.idle)
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -42,7 +41,7 @@ func _state_logic(delta):
 			parent.aim.visible = true
 			parent._aim()
 	
-	if ![states.attack, states.shoot, states.talk].has(state):
+	if ![states.attack, states.shoot].has(state):
 		parent._movement(delta)
 		if state == states.jump:
 			parent.velocity.y += parent.gravity * delta

@@ -12,10 +12,9 @@ onready var sm =$WorldModeSM
 
 func _input(event: InputEvent) -> void:
 	if player in hitbox.get_overlapping_bodies():
-		if Input.is_action_just_pressed("left_click") and player.sma.state != player.sma.states.talk:
+		if Input.is_action_just_pressed("left_click"): 
 			player.set_dialog(dialog)
-			yield(get_tree().create_timer(0.1), "timeout")
-			player.set_talking(true)
+			player.add_child(player.current_dialog)
 
 func _process(delta: float) -> void:
 	if !inverted and sm.state == sm.states.inverted:
