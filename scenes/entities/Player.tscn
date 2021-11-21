@@ -371,7 +371,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.52
 pixel_size = 0.1
 frames = SubResource( 12 )
 animation = "shoot"
-frame = 1
+frame = 3
 playing = true
 
 [node name="Music" type="AudioStreamPlayer" parent="."]

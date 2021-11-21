@@ -97,10 +97,8 @@ func _enter_state(new_state, old_state):
 				parent.sfx.play()
 				parent.sprite.play("run_down")
 		states.idle:
-			if parent.has_gun:
 				parent.sprite.play("idle_with_gun")
-			else:
-				parent.sprite.play("idle")
+
 
 func _exit_state(old_state, new_state):
 	match old_state: 
