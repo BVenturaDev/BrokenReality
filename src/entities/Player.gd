@@ -53,7 +53,6 @@ func _ready() -> void:
 	add_to_group("player")
 	music.stream = normal_song
 	music.play()
-	sma.state = sma.states.talk
 	add_child(dialog_begin)
 	
 

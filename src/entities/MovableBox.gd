@@ -36,16 +36,15 @@ func _limit_movement():
 
 	
 func _process(delta: float) -> void:
-	if player.has_push:
-		if player in left.get_overlapping_bodies():
-			direction = Vector3(1,0,0)
-		elif player in right.get_overlapping_bodies():
-			direction = Vector3(-1,0,0)
-		elif player in up.get_overlapping_bodies():
-			direction = Vector3(0,0,1)
-		elif player in down.get_overlapping_bodies():
-			direction = Vector3(0,0,-1)
-		else:
-			direction = Vector3.ZERO
-		move_and_slide(direction*speed*delta, Vector3.UP)
-		_limit_movement()
+	if player in left.get_overlapping_bodies():
+		direction = Vector3(1,0,0)
+	elif player in right.get_overlapping_bodies():
+		direction = Vector3(-1,0,0)
+	elif player in up.get_overlapping_bodies():
+		direction = Vector3(0,0,1)
+	elif player in down.get_overlapping_bodies():
+		direction = Vector3(0,0,-1)
+	else:
+		direction = Vector3.ZERO
+	move_and_slide(direction*speed*delta, Vector3.UP)
+	_limit_movement()
