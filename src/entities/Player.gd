@@ -37,7 +37,6 @@ onready var sm = $WorldModeSM
 onready var sma = $PlayerActionSM
 onready var timer =  $Timer
 onready var respawner = get_parent().get_node("Respawner")
-onready var dialog_after_win = Dialogic.start("AfterWin") 
 onready var dialog_begin = Dialogic.start("Begin") 
 onready var music = $Music
 onready var sfx = $SFX

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scenes/levels/Areas.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/entities/Enemy.tscn" type="PackedScene" id=2]
@@ -14,10 +14,15 @@
 [ext_resource path="res://scenes/entities/WinGame.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/entities/Lever.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scenes/entities/NPC.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/entities/NPCrespawn.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/entities/Mirror.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/entities/Breakable_Box.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scenes/ui/GameUI.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/entities/NPCintro.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/entities/NPCmirror.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/entities/NPCwin.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/entities/NPCpush.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scenes/entities/NPCgun.tscn" type="PackedScene" id=23]
 
 [sub_resource type="Curve3D" id=1]
 _data = {
@@ -88,6 +93,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.7478, 0, 0.368714 )
 
 [node name="Camera" parent="Player/CameraRotator" index="0"]
 size = 16.0
+
+[node name="Sprite" parent="Player" index="7"]
+frame = 2
 
 [node name="Mirrors" type="Spatial" parent="."]
 
@@ -1579,28 +1587,23 @@ rotation_mode = 0
 
 [node name="NPCs" type="Spatial" parent="."]
 
-[node name="NPC" parent="NPCs" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.2804, 0.931666, -12.2769 )
+[node name="NPCIntro" parent="NPCs" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.2804, 1.86333, -12.2769 )
 
-[node name="NPC6" parent="NPCs" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.786, 0.931666, -73.934 )
-dialog = "mirror"
+[node name="NPCmirror" parent="NPCs" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.786, 1.86333, -73.934 )
 
-[node name="NPC2" parent="NPCs" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0846, 0.931666, -20.5482 )
-dialog = "mirror"
+[node name="NPCrespawn" parent="NPCs" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0846, 1.86333, -20.5482 )
 
-[node name="NPC3" parent="NPCs" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.1413, 0.931666, 7.07961 )
-dialog = "win"
+[node name="NPCwin" parent="NPCs" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.1413, 1.86333, 7.07961 )
 
-[node name="NPC4" parent="NPCs" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111.143, 0.931666, 48.8273 )
-dialog = "push"
+[node name="NPCpush" parent="NPCs" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111.143, 1.86333, 48.8273 )
 
-[node name="NPC5" parent="NPCs" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 131.916, 0.931666, 117.489 )
-dialog = "gun"
+[node name="NPCgun" parent="NPCs" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 131.916, 1.86333, 117.489 )
 
 [node name="FinalDoorLevers" type="Spatial" parent="."]
 
