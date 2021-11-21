@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/levels/Areas.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/entities/Enemy.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Env.tres" type="Environment" id=8]
 [ext_resource path="res://scenes/entities/FinalDoor.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/entities/FinalLever.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/ui/GameUI.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/entities/Lever.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/entities/NPC.tscn" type="PackedScene" id=15]
@@ -1475,6 +1476,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6912, -0.130171, 17.9431 )
 
 [node name="FinalDoor" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.2863, 0, -21.3294 )
+
+[node name="GameUI" parent="." instance=ExtResource( 11 )]
 
 [editable path="Player"]
 [editable path="Levers_and_Doors/Intro"]

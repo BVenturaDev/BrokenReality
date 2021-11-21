@@ -1,8 +1,12 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/ui/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://src/options/options_menu_example.tscn" type="PackedScene" id=2]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -44,3 +48,10 @@ anchor_bottom = 0.75
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
+
+[node name="MarginContainer" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[connection signal="pressed" from="Container/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Container/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="Container/QuitButton" to="." method="_on_QuitButton_pressed"]
