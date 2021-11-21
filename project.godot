@@ -68,8 +68,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Broken Reality"
-run/main_scene="res://scenes/levels/MainLevel.tscn"
+config/name="Shattered Reality"
+run/main_scene="res://scenes/ui/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]

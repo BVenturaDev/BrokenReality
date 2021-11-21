@@ -13,7 +13,7 @@ func _ready() -> void:
 	call_deferred("set_state", states.idle)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if [states.idle, states.walk, states.run].has(state):
+	if [states.idle, states.walk].has(state):
 		if Input.is_action_just_pressed("left_click") and parent.has_attack:
 			parent._attack()
 			state = states.attack
@@ -37,7 +37,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_tree().set_input_as_handled()
 
 func _state_logic(delta):
-	if [states.idle, states.walk, states.run].has(state):
+	if [states.idle, states.walk].has(state):
 		if Input.is_action_pressed("right_click") and parent.timer.is_stopped() and parent.has_gun :
 			parent.aim.visible = true
 			parent._aim()
