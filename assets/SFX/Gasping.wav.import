@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Gasping.wav-9676a9244ee7e729045fe9e175a9d5d8.sample"
+
+[deps]
+
+source_file="res://assets/SFX/Gasping.wav"
+dest_files=[ "res://.import/Gasping.wav-9676a9244ee7e729045fe9e175a9d5d8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -53,3 +53,5 @@ transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -14.1992, 0, 0 )
 
 [node name="fence9" parent="Fences" instance=ExtResource( 1 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -15.217, 0, 0 )
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
